@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile | A2ZRecruit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+  <link
+  rel="shortcut icon"
+  href="{{url_for('static', filename='images/favicon.png')}}"
+  type="image/x-icon"
+/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="{{url_for('static', filename='naukri/css/jobs.css')}}" />
+  <link rel="stylesheet" href="{{url_for('static', filename='naukri/css/searchbar.css')}}" />
+  <script src="https://kit.fontawesome.com/629044acfa.js" crossorigin="anonymous"></script>
+  <style>
+   
+          .reset-div {
+        margin: 0;
+        padding: 0;
+        border: none;
+        background: none;
+        display: contents;
+        /* Add any other default styles you want to reset */
+    }
+    #nav {
+      display: flex;
+      width: 100%;
+      min-width: 1354px;
+      height: 60px;
+      justify-content: center;
+      background-color: white;
+    }
+
+    .left {
+      width: 15%;
+      text-align: left;
+      padding: 0%;
+      margin-bottom: 5px;
+      /* margin-left: 80px; */
+    }
+
+    .left img {
+      width: 200px;
+      height: 100px;
+    }
+
+    .right {
+
+      width: 80%;
+      padding-top: 5px;
+      text-align: center;
+      margin-right: 250px;
+    }
+
+    #logo {
+      height: 100%;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      /* background-color:hotpink;  */
+      height: 100%;
+      width: 100%;
+    }
+
+    li {
+      float: left;
+    }
+
+    li a,
+    .dropbtn {
+      display: inline-block;
+      color: rgb(82, 82, 82);
+      text-align: center;
+      padding: 8px -1px;
+      margin-right: 30px;
+      text-decoration: none;
+      width: 84%;
+      /* border: 1px solid forestgreen;  */
+    }
+
+    li a:hover,
+    .dropdown:hover .dropbtn {
+      background-color: #f1f1f1;
+    }
+
+    li.dropdown {
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 200px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 11;
+      height: auto;
+      margin-top: -3px;
+      align-items: center;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 10px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+      align-items: center;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      color: rgb(82, 82, 82);
+    }
+
+    .dropbtn {
+      margin-top: -1px;
+      height: 38px;
+      padding-top: 16px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropbtn:hover {
+      background-color: #f1f1f1;
+      text-decoration: underline 4px solid rgb(62, 62, 255);
+      color: rgb(62, 62, 255);
+    }
+
+    .dropbtn .badge {
+      position: absolute;
+      padding: 1px 2px;
+      border-radius: 50%;
+      background: red;
+      color: white;
+    }
+
+    .navibarr {
+      margin: auto;
+      width: 100vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      /* overflow: hidden; */
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      background-color: white;
+      height: 10vh;
+      font-family:Satoshi, sans-serif
+
+    }
+
+    .t_button_1 {
+      margin-right: 18px;
+      padding: 12px;
+      width: 5vw;
+      font-weight: 600;
+      color: rgb(42, 184, 240);
+      border-radius: 20px;
+
+      cursor: pointer;
+      background: #FFFFFF;
+      border: 1px solid #88ADFF;
+      border-radius: 100px;
+
+    }
+
+    .t_button_2 {
+      padding: 12px;
+      width: 7vw;
+      font-weight: 600;
+      color: white;
+      border-radius: 20px;
+      background-color: #FF7555;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+    .t_button_3{
+    margin-right: 18px;
+    padding: 12px;
+    width: 11vw;
+    font-weight: 600;
+    color: rgb(42, 184, 240);
+    border-radius:20px;
+  
+    cursor: pointer;
+    background: #FFFFFF;
+    border: 1px solid #88ADFF;
+    border-radius: 100px;
+  
+}
+
+    .t_h3_J {
+      font-size: 15px;
+      line-height: 20px;
+      color: #4a4f59;
+      font-weight: 500;
+      font-weight: lighter;
+
+      /* transition:all .7s ease-in-out; */
+      /* -moz-transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out; */
+      box-sizing: border-box;
+    }
+    .hamburger-menu {
+    display: none; /* Hide by default on larger screens */
+    cursor: pointer;
+}
+
+/* Style for each bar in the hamburger menu */
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+}
+#jobCardsContainer{
+      width: 100%;
+    }
+    #chatsicon-mob{
+  display: none;
+}
+/* Media query for smaller screens */
+@media (max-width: 790px) {
+    .hamburger-menu {
+    display: block;
+    /* margin: 22em; */
+    float: right;
+    margin-left: auto;
+    margin-right: 2rem;
+    /* justify-content: flex-end; */
+    }
+
+    .t_elements {
+        display: none; /* Hide navigation links by default on smaller screens */
+    }
+    .t_button {
+        display: none; /* Hide navigation links by default on smaller screens */
+    }
+    .t_button {
+        display: none; /* Hide navigation links by default on smaller screens */
+    }
+
+
+    .t_elements.active {
+        display: flex; /* Show navigation links when hamburger menu is clicked */
+        flex-direction: column;
+        background-color: #fff;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        z-index: 10;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .t_elements.active a {
+        margin: 10px 0;
+    }
+    #featured{
+      display: none;
+    }
+    #jobCardsContainer{
+      width: 95vw;
+    }
+    #main{
+      width: 100vw;
+    }
+    #chatsicon-mob{
+    display: block;
+  }
+    #chatsicon-desk{
+    display: none;
+  }
+}
+
+
+    
+  </style>
+</head>
+
+<body>
+  <div class="navibarr">
+    <div class="t_logo"><a href="/"><img src="static/images/mbsalogo.png" alt="Error" id="mainpagepaileja" height="60"
+          width="250"></a></div>
+    <div class="t_elements">
+      <ul class="t_elements_container">
+        <li class="t_elements_li">
+          <a href="/alljobs" class="t_anchor_tag t_h3_J">
+            <p style="margin-right: 20px;font-size: 14px;text-decoration: none;" id="t_h3_J">All Jobs</p>
+          </a>
+        </li>
+        <li class="t_elements_li">
+          <a href="/dashboard" class="t_anchor_tag t_h3_J">
+            <p style="margin-right: 20px;font-size: 14px;text-decoration: none;" id="t_h3_J">Recommended Jobs</p>
+          </a>
+        </li>
+        <li class="t_elements_li">
+          <a href="/applied_jobs" class="t_anchor_tag t_h3_J">
+            <p style="margin-right: 20px;font-size: 14px;text-decoration: none;" id="t_h3_J">Applied Jobs</p>
+          </a>
+        </li>
+        <li class="t_elements_li">
+          <a href="/saved_jobs" class="t_anchor_tag t_h3_J">
+            <p style="margin-right: 20px;font-size: 14px;text-decoration: none;" id="t_h3_J">Saved Jobs</p>
+          </a>
+        </li>
+        <li class="t_elements_li">
+          <a href="/profile" class="t_anchor_tag t_h3_J">
+            <h3 style="margin-right: 20px;font-size: 14px;text-decoration: none;" id="t_h3_J"><u>Profile</u></h3>
+          </a>
+        </li>
+        <li class="t_elements_li" id="chatsicon-mob">
+          <a href="/chats" class="t_anchor_tag t_h3_J">
+            <p style="margin-right: 20px;font-size: 14px;text-decoration: none;" id="t_h3_J">Chats</p>
+          </a>
+        </li>
+        <li style="margin-left: 200px" id="chatsicon-desk">
+          <a class="dropbtn" href="/chats"
+          ><i class="far fa-bell fa-2x"></i
+          ><span class="badge">3</span></a
+        >
+
+      </ul>
+    </div>
+    <div class="hamburger-menu" >
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+  </div>
+    <div class="t_button">
+      <a href="/billbot"><button class="t_button_3">AI Resume Builder</button></a>
+      <a href="/logout"><button class="t_button_2">Logout</button></a>
+    </div>
+    <div class="t_foremployers_container">
+
+    </div>
+  </div>
+
+
+  <div id="main">
+
+    <div>
+      <!-- <div id="statistics">placeholder</div> -->
+      <div id="jobCardsContainer">
+        <div class="card" id="" style="display: block;border-radius: 20px;">
+          {% if 'profile_pic' in profile_details %}
+          <img src="{{profile_details['profile_pic']}}" alt="" width="140" height="140" class="bd-placeholder-img rounded-circle my-3" id="profile_pic_link">
+          {% endif %}
+         <a style="text-decoration: none;color: black;"><h4>{{profile_details['name']}}</h4></a>
+       
+          <div class="small-grey-txt" style="margin-top: 20px;">
+            <div class="d-flex">
+              {% if 'position' in profile_details %}
+              <div><img src="static/images/work_icon.png" style="height: 20px; margin-right: 5px;margin-bottom: 5px;"><span>{{profile_details['position']}}</span></div>
+              {% endif %}
+            </div>
+            <br>
+          </div>
+          <br>
+          <div class="med-font d-flex">
+            <p> {{profile_details['description']}}</p>
+          </div>
+          <br>
+          <ul>
+            <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Mobile:</strong> &nbsp; {{profile_details['mobno']}}</li> <br><br>
+            <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Email:</strong> &nbsp; {{profile_details['email']}}</li> <br><br>
+            {% if 'location' in profile_details %}
+            <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Location:</strong> &nbsp; {{profile_details['location']}}</li> <br><br>
+            {% endif %}
+          </ul>
+          <div>
+            <p class="posted" style="visibility: hidden;"><i class="fa fa-history" aria-hidden="true"></i> 761 DAYS AGO</p>
+         <button class="save-btn" style="float: right" type="button" data-bs-toggle="modal" data-bs-target="#editModal"><i class="far fa-edit" aria-hidden="true"></i> Edit</button>
+     <!-- Modal -->
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Profile</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form action="/profile" method="post" enctype="multipart/form-data">
+      <div class="modal-body">
+        <div class="row">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4">
+              {% if 'profile_pic' in profile_details %}
+              <img src="{{profile_details['profile_pic']}}" alt="" width="140" height="140" class="bd-placeholder-img rounded-circle" id="profile_pic_link">
+              {% else %}
+              <img src="" alt="" width="140" height="140" class="bd-placeholder-img rounded-circle" id="profile_pic_link">
+              {% endif %}
+              <input class="my-2" type="file" name="profile_pic" id="profile_pic_img" accept=".jpg, .jpeg, .png">
+              <!-- <svg class=""  xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg> -->
+            </div>
+            <div class="col-lg-4"></div>
+          </div><!-- /.row -->
+            <div class="form-group">
+              <label for="exampleFormControlInput1" class="my-1">Full Name</label>
+              <input type="text" class="form-control" id="name" name="name" value="{{profile_details['name']}}" placeholder="Your full name">
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlInput1" class="my-1">Mobile No.</label>
+              <input type="text" class="form-control" id="mobno" name="mobno" value="{{profile_details['mobno']}}" placeholder="Your mobile no.">
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlInput1" class="my-1">Email</label>
+              <input type="email" class="form-control" id="email" name="email" value="{{profile_details['email']}}" placeholder="Your email">
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlInput1" class="my-1">Location</label>
+              <input type="text" class="form-control" id="location" name="location" value="{{profile_details['location']}}" placeholder="Your Location">
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlInput1" class="my-1">Position / Responsibility</label>
+              <input type="text" class="form-control" id="position" name="position" value="{{profile_details['position']}}" placeholder="Your Location">
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1" class="my-1">Profile Description</label>
+              <input type="text" class="form-control" id="description" name="description" value="{{profile_details['description']}}" placeholder="Your Location">
+            
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn bg-secondary" data-bs-dismiss="modal" style="color:white">Close</button>
+          <button type="submit" class="btn bg-primary" style="color:white">Save changes</button>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
+<hr>
+<h6 class="my-3">Update Resume</h6>
+{% if 'resume_link' in profile_details %}
+<a href="{{profile_details['resume_link']}}" class="mb-2" target="_blank">Current Resume</a>
+{% endif %}
+<form action="/update_resume" method="post" enctype="multipart/form-data" onsubmit="return updateResume()">
+  <input type="file" id="resume" name="resume" accept=".pdf" required style="font-size: 0.7em;">
+  <br>
+  <br>
+  <button class="btn btn-primary" type="submit">Upload</button>
+</form>
+<hr>
+<h6 class="my-3">Candidate's Intro Video</h6>
+<form action="/upload_intro_candidate" method="post" enctype="multipart/form-data" onsubmit="return uploadIntroVideo()">
+  <input type="file" id="videoInput" name="intro_video" accept="video/*" required style="font-size: 0.7em;">
+  <br>
+  <br>
+  <video id="videoPlayer" controls style="width: 20%;height: 20%;">
+    {% if 'intro_video_link' in profile_details %}
+    <source src="{{profile_details['intro_video_link']}}" type="video/mp4">
+      Your browser does not support the video tag.
+    {% endif %}
+  </video> <br>
+  <button class="btn btn-primary" type="submit">Upload</button>
+</form>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="featured">
+    <div id="recmd-reg" style="border-radius: 20px;">
+      <div class="d-flex" >
+        <h4>Checkout your public profile</h4>
+        <img src="https://static.naukri.com/s/7/109/assets/images/register.e0bc10df.png" alt="" height="60px" />
+      </div>
+      <p>
+        Click on the button below and access our public profile to checkout how interviewers will see your profile.
+      </p>
+      <button style="border-radius: 20px;"><a href="/public/candidate/{{user_id}}" style="text-decoration: none;color: white;">My Public Profile </a></button>
+    </div>
+    <div id="featured-comp" style="border-radius: 20px;">
+      <h4>See 232 jobs in Featured Companies</h4>
+      <div id="company-container">
+        <img src="https://img.naukri.com/fc_images/v2/18166.gif">
+        <img src="https://img.naukri.com/fc_images/v2/24468.gif">
+        <img src="https://img.naukri.com/fc_images/v2/4250870.gif">
+        <img src="https://img.naukri.com/fc_images/v2/74756.gif">
+        <img src="https://img.naukri.com/fc_images/v2/647395.gif">
+        <img src="https://img.naukri.com/fc_images/v2/158869.gif">
+      </div>
+    </div>
+  </div>
+  </div>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+    
+    .footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px 0;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+    
+    .footer-section {
+      flex: 1;
+      margin: 0 10px;
+    }
+    
+    .footer-section h3 {
+      margin-top: 0;
+    }
+    
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .footer-section ul li {
+      margin-bottom: 5px;
+    }
+    
+    .footer-section ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+    
+    /* Media Query for responsiveness */
+    @media (max-width: 768px) {
+      .footer-section {
+        flex-basis: 100%;
+        margin: 10px 0;
+      }
+    }
+    
+      </style>
+      <footer class="footer" style="margin-top: 10px; font-size: medium;">
+        <div class="container">
+          <div class="footer-content">
+            <div class="footer-section">
+              <h5>Contact Us</h5>
+              <p>Email: <a href="mailto:contact@example.com" style="color: white;">contact@example.com</a></p>
+              <p>Phone: <a href="tel:7974378884" style="color: white;">7974378884</a></p>
+            </div>
+            <div class="footer-section">
+              <h5>Important Links</h5>
+              <ul>
+                <li><a href="/about-us" >About Us</a></li>
+                <li><a href="/services" >Services</a></li>
+                <li><a href="/faqs" >FAQs</a></li>
+              </ul>
+            </div>
+            <div class="footer-section">
+              <h5>Follow Us</h5>
+              <ul>
+                <li><a href="/facebook">Facebook</a></li>
+                <li><a href="/facebook">Twitter</a></li>
+                <li><a href="/facebook">Instagram</a></li>
+              </ul>
+            </div>
+            <div class="footer-section">
+              <h5>Checkout our apps</h5>
+              <div class="my-1">
+                <img src="https://static.naukimg.com/s/0/0/i/new-homepage/android-app.png" alt="">
+            </div>
+            <div>
+                <img src="https://static.naukimg.com/s/0/0/i/new-homepage/ios-app.png" alt="">
+            </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+ <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const navElements = document.querySelector('.t_elements');
+
+    hamburgerMenu.addEventListener('click', function() {
+        navElements.classList.toggle('active');
+    });
+});
+ </script>
+</body>
+
+<script>
+  function uploadIntroVideo(){
+    let a = confirm("Are you sure you want to upload the intro video in your profile?")
+    if(a) return true;
+    else return false;
+  }
+  function updateResume(){
+    let a = confirm("Are you sure you want to upload the resume in your profile?")
+    if(a) return true;
+    else return false;
+  }
+     document.getElementById('profile_pic_img').addEventListener('change', function (event) {
+            const fileInput = event.target;
+            const imagePreview = document.getElementById('profile_pic_link');
+
+            if (fileInput.files && fileInput.files[0]) {
+                const reader = new FileReader();
+
+                reader.onload = function (e) {
+                    imagePreview.src = e.target.result;
+                };
+
+                reader.readAsDataURL(fileInput.files[0]);
+            } else {
+                imagePreview.src = '';
+            }
+        });
+
+        document.getElementById('videoInput').addEventListener('change', function(event) {
+      var file = this.files[0];
+      var videoPlayer = document.getElementById('videoPlayer');
+
+      var reader = new FileReader();
+      reader.onload = function(event) {
+        videoPlayer.src = event.target.result;
+      };
+
+      reader.readAsDataURL(file);
+    });
+</script>
+<!-- <script src="{{url_for('static', filename='naukri/js/jobData.js')}}"></script>
+  <script src="{{url_for('static', filename='naukri/js/jobs.js')}}"></script>
+  <script src="{{url_for('static', filename='naukri/js/filters.js')}}"></script>
+  <script src="{{url_for('static', filename='naukri/js/processFilters.js')}}"></script> -->
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</html>

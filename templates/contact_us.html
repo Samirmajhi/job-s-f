@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | A2ZRecruit</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='new/Naya tropical/Landing Page by Nandlal/homep.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='new/Naya tropical/navbar/t_navbar.css')}}" />
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        #reg_navbar{
+          display: flex;
+          justify-content: space-between;
+          box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        }
+        #reg_navbar>img{
+        height: 100%;
+        margin: 10px 20px;
+        }
+        #reg_navbar>p{
+        margin: 10px 20px;         
+        }
+        .r_container{
+            /* border: 1px solid red; */
+            width: 98%;
+            height: 200vh;
+            margin: auto;
+            display: flex;
+            margin-top: 30px
+        }
+        .r_left{
+         /* border: 1px solid magenta; */
+         width: 25%;
+         height: 55vh;
+         margin-top: 10px;
+         /* position: fixed; */
+         float: left;
+        }
+        .r_right{
+         /* border: 1px solid teal; */
+         width: 75%;
+         float: right;
+        }
+        .r_right_top{
+            border: 1px solid transparent;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            width: 95%;
+            margin: auto;
+            height: 100vh;
+            margin-bottom: 2px;
+        }
+        .r_right_bottom{
+            /* border: 1px solid rgb(109, 15, 250); */
+            width: 90%;
+            margin-top: 40px;
+            height: 16vh;
+        }
+        .r_left_div img:nth-child(1){
+         height: 3vh;
+         margin-top: 20px;
+        }
+        .r_left_div img:nth-child(3){
+         height: 3vh;
+        }
+        .r_left_div img:nth-child(5){
+         height: 3vh;
+        }
+        .r_left_div div:nth-child(1){
+         display: flex;
+         justify-content: center;
+         margin-bottom: -20px;
+        }
+        .r_left_div div:nth-child(2){
+         display: flex;
+         justify-content: center;
+         margin-left:13px ;
+         margin-bottom: -20px;
+        }
+        .r_left_div div:nth-child(3){
+         display: flex;
+         justify-content: center;
+        }
+        .r_left h3{
+            text-align: center;
+            margin-bottom: -5px;
+            margin-left: 20px;
+            font-family: "Varela Round", sans-serif;
+        }
+        .r_left_div{
+            /* border: 1px solid red; */
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            height: 50vh;
+            margin-top: -90px;
+        }
+        .r_right_top h1{
+          font-family: "Varela Round", sans-serif;
+        margin: 50px 0 30px 50px;
+        font-size: 32px;
+        line-height: 28px;
+        }
+        .t_reg_form{
+            margin-left: 50px;
+        }
+        .t_reg_form label{
+            font-weight: 600;
+            color: grey;
+            font-family: "Varela Round", sans-serif;
+        }
+        .t_reg_form input{
+            width: 50vw;
+            height: 7vh;
+        }
+        .t_reg_form ::placeholder{
+            font-size: large;
+            padding: 5px;
+            color: gray;
+        }
+        .t_resume-btn{
+            margin: 10px 0 10px 0;
+            padding: 10px;
+            width: 10vw;
+            font-weight: 600;
+            color: white;
+            border-radius:20px;
+            background-color: #FF7555;
+            border: 1px solid transparent;
+            cursor: pointer;
+        }
+        .t_resume-btn1{
+            margin: 10px 0 10px 0;
+            padding: 10px;
+            width: 12vw;
+            font-size: large;
+            font-weight: 700;
+            color: white;
+            border-radius:20px;
+            background-color: #457EFF;
+            border: 1px solid transparent;
+            cursor: pointer;
+        }
+        .r_right_bottom div{
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        }
+        .r_right_bottom div a{
+        color: #457EFF;
+        font-size: small;
+        text-decoration: none;
+        }
+
+</style>
+<style>
+    .t_elements_container {
+    display: flex;
+    margin-left: 0;
+    list-style: none;
+}
+     .navibarr {
+      margin: auto;
+      width: 100vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      /* overflow: hidden; */
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      background-color: white;
+      height: 10vh;
+      font-family: "Varela Round", sans-serif;
+
+    }
+  .hamburger-menu {
+  display: none; /* Hide by default on larger screens */
+  cursor: pointer;
+}
+
+/* Style for each bar in the hamburger menu */
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 5px 0;
+}
+#chatsicon-mob{
+display: none;
+}
+#skills{
+    width: 715px;
+}
+#bottom_navbar{
+        display: none;
+    }
+    .navbar {
+    font-family: "Varela Round", sans-serif;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 110vw;
+    background-color: #fff;
+    /* padding: 10px 0; */
+    z-index: 100;
+    box-shadow: 10px 10px 20px #c7c7c7, 
+                -10px -10px 20px #ffffff;
+}
+
+.navbar ul {
+    list-style-type: none;
+    text-align: center;
+    float: left;
+    margin-left: -1rem;
+}
+
+.navbar ul li {
+    display: inline-block;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #000;
+    padding: 0px 20px;
+    display: block;
+}
+
+.navbar ul li a:hover {
+  background-color: #eee6e6;
+}
+/* Media query for smaller screens */
+@media (max-width: 790px) {
+  body{
+        overflow-x: hidden;
+    }
+    #map-container{
+      display: none;
+    }
+  .t_resume-btn1{
+            width: 15vw;
+            font-size: small;
+ 
+        }
+  #bottom_navbar{
+        display: block;
+    }
+  .r_right{
+         /* border: 1px solid teal; */
+         width: 100%;
+         float: left;
+        }
+  .r_left{
+    display: none;
+  }
+.hamburger-menu {
+  display: block;
+  /* margin: 22em; */
+  float: right;
+  margin-left: auto;
+  margin-right: 2rem;
+  /* justify-content: flex-end; */
+  }
+
+  .t_elements {
+      display: none; /* Hide navigation links by default on smaller screens */
+  }
+  .t_button {
+      display: none; /* Hide navigation links by default on smaller screens */
+  }
+  .t_button {
+      display: none; /* Hide navigation links by default on smaller screens */
+  }
+
+
+  .t_elements.active {
+      display: flex; /* Show navigation links when hamburger menu is clicked */
+      flex-direction: column;
+      background-color: #fff;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      padding: 20px;
+      border-radius: 10px;
+  }
+
+  .t_elements.active a {
+      margin: 10px 0;
+  }
+  /* body{
+    font-size: x-small;
+  } */
+  #main{
+    width: 100vw;
+    margin: 0px auto;
+  }
+
+  #jobCardsContainer{
+    width: 67vw;
+  }
+  #filterContainer{
+    width: 17vw;
+    margin: 0 0;
+  }
+  #filterContainer > div{
+    width: 141px;
+  }
+  #featured{
+    display: none;
+  }
+  #searchalljobs{
+    margin-top: 10px;
+    width: 50vw
+  }
+  .card{
+    width: 54vw;
+  }
+  #chatsicon-mob{
+  display: block;
+}
+  #chatsicon-desk{
+  display: none;
+}
+#suggestionhaiya{
+    width: 90vw;
+}
+
+#skills{
+    width: 53vw;
+    font-size: small;
+}
+#pehla{
+    width: 53vw;
+    font-size: small;
+}
+#qsbSubmit{
+    width: 25vw;
+    font-size: medium;
+}
+.fourthh{
+    width: 25vw;
+    font-size: medium;
+
+}
+#Discovryy, #growcarrier{
+    display: none;
+}
+
+}
+
+
+</style>
+</head>
+<body>
+    <!-- THIS IS THE DIV BELONGS TO NAVBAR OF THE REGISTER PAGE -->
+    <nav class="navbar" id="bottom_navbar" >
+      <ul>
+          <li><a href="/"><i class="fa fa-home" style="font-size:24px"></i> <br>Home</a></li>
+          <li><a href="/about-us"><i class="fa fa-user" style="font-size:24px"></i> <br>About</a></li>
+          <li><a href="/contact-us"><i class="fa fa-phone" style="font-size:24px"></i> <br>Contact</a></li>
+          <li><a href="/login"><i class="fa fa-sign-in" style="font-size:24px"></i> <br>Login</a></li>
+      </ul>
+  </nav>
+    <div class="navibarr">
+      <div class="t_logo"><a href="/"><img src="static/images/final_logo.png" alt="Error" id="mainpagepaileja" height="60"
+        width="230"></a></div>
+        <div class="t_elements">
+          <ul class="t_elements_container">
+            <li class="t_elements_li">
+              <a href="/" class="t_anchor_tag t_h3_J">
+                <p style="margin-right: 20px;font-size: 14px;text-decoration: none;" id="t_h3_J">Home</p>
+              </a>
+            </li>
+            <li class="t_elements_li">
+              <a href="/about-us" class="t_anchor_tag t_h3_J">
+                <h3 style="margin-right: 20px;font-size: 14px;text-decoration: none;" id="t_h3_J">About us</h3>
+              </a>
+            </li>
+            <li class="t_elements_li">
+              <a href="/contact-us" class="t_anchor_tag t_h3_J">
+                <p style="margin-right: 20px;font-size: 14px;text-decoration: none;" id="t_h3_J"><b>Contact us</b></p>
+              </a>
+            </li>
+          
+          </ul>
+        </div>
+        <div class="hamburger-menu">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+      </div>
+        <div class="t_button">
+          <a href="/billbot"><button class="t_button_3" style="font-family: 'Varela Round', sans-serif;">AI Resume Builder</button></a>
+          <a href="/login"><button class="t_button_2" style="font-family: 'Varela Round', sans-serif;">Login</button></a>
+        </div>
+        <div class="t_foremployers_container">
+    
+        </div>
+      </div>
+
+   <!-- THIS THE CONTAINER WHICH CONTAINS THE REMAINING ELEMENTS OF THE REGISTER PAGE -->
+
+   <div class="r_container">
+     <div class="r_left" >
+        <img src="https://static.naukimg.com/s/7/104/assets/images/green-boy.c8b59289.svg" alt="Error" style="margin-left:100px; margin-top: 50px;">
+        <h3>We are here to help you!</h4>
+        <div class="r_left_div">
+            <div>
+                <img src="https://givingmultiplier.org/assets/steps/check_green-b697563c885622ccd32a7c4dfef8e8eeaa3e32835b487808dc4689723cdb4c99.png" alt="Error"style="margin-top:100px;">
+                <p style="width: 13vw;margin-left:8px;color: grey;margin-top: 100px;font-family: 'Varela', sans-serif;">Build your profile and let recruiters find you</p>
+            </div>
+            <div>
+                <img src="https://givingmultiplier.org/assets/steps/check_green-b697563c885622ccd32a7c4dfef8e8eeaa3e32835b487808dc4689723cdb4c99.png" alt="Error">
+            <p style="width: 14vw;margin-left:8px;color: grey;font-family: 'Varela', sans-serif;">Get job postings delivered right to your email</p>
+            </div>
+            <div>
+                <img src="https://givingmultiplier.org/assets/steps/check_green-b697563c885622ccd32a7c4dfef8e8eeaa3e32835b487808dc4689723cdb4c99.png" alt="Error">
+                <p style="width: 13vw;margin-left:8px;color: grey;font-family: 'Varela', sans-serif;">Find a job and grow your career</p>
+            </div>
+        </div>
+     </div>
+
+     <div class="r_right">
+         <div class="r_right_top">
+            <h1>Contact Us</h1>
+            <br>
+            <form class="t_reg_form" action="/contact-us" method="post">
+                <label for="Name">Full Name</label><br>
+                <input type="text" placeholder="What is your name?" id="t_fullname" style="border-radius: 10px;width: 90%;"><br><br>
+                <label for="Email">Email Id</label><br>
+                <input type="email" placeholder="Tell us your Email ID" style="border-radius: 10px;width: 90%;"><br>
+                <br>
+                <label for="phone">Mobile Number</label><br>
+                <input type="number" value="+91" placeholder="Mobile Number" style="border-radius: 10px;width: 90%;"><br>
+                <br>
+                <label for="phone">Your Query</label><br>
+                <textarea name="" id="" cols="30" rows="10" style="border-radius: 10px;width: 50vw;width: 90%;" ></textarea>
+                
+
+                <br>
+                <button class="t_resume-btn1" >Submit</button>
+            </form>
+            <center>  <div id="map-container" style="margin-top: 15px;">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387070.94465598814!2d-74.25986440670589!3d40.69714942241399!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2suk!4v1644488994064!5m2!1sen!2suk" 
+                    width="800" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div></center>
+        </div>
+       
+     </div>
+   </div>
+ 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const hamburgerMenu = document.querySelector('.hamburger-menu');
+      const navElements = document.querySelector('.t_elements');
+  
+      hamburgerMenu.addEventListener('click', function() {
+          navElements.classList.toggle('active');
+      });
+  });
+   </script>
+</body>
+</html>

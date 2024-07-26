@@ -1,0 +1,185 @@
+<!--
+=========================================================
+* Soft UI Design System - v1.0.9
+=========================================================
+
+* Product Page:  https://www.creative-tim.com/product/soft-ui-design-system 
+* Copyright 2023 Creative Tim (https://www.creative-tim.com)
+* Coded by www.creative-tim.com
+
+ =========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="apple-touch-icon" sizes="76x76" href="{{url_for('static', filename='assets/img/apple-icon.png')}}">
+  <link rel="icon" type="image/png" href="{{url_for('static', filename='assets/img/favicon.png')}}">
+  <title>
+    Edit Job | JobSaathi
+  </title>
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+  <!-- Nucleo Icons -->
+  <link href="{{url_for('static', filename='assets/css/nucleo-icons.css')}}" rel="stylesheet" />
+  <link href="{{url_for('static', filename='assets/css/nucleo-svg.css')}}" rel="stylesheet" />
+  <!-- Font Awesome Icons -->
+  <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+  <link href="{{url_for('static', filename='assets/css/nucleo-svg.css')}}" rel="stylesheet" />
+  <!-- CSS Files -->
+  <link id="pagestyle" href="{{url_for('static', filename='assets/css/soft-design-system.css')}}" rel="stylesheet" />
+  <!-- Nepcha Analytics (nepcha.com) -->
+  <!-- Nepcha is a easy-to-use web analytics. No cookies and fully compliant with GDPR, CCPA and PECR. -->
+  <script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
+</head>
+
+<body class="contact-us">
+  <!-- Navbar -->
+  <div class="container position-sticky z-index-sticky top-0">
+    <div class="row">
+      <div class="col-12">
+        <nav class="navbar navbar-expand-lg  blur blur-rounded top-0 z-index-fixed shadow position-absolute my-3 py-2 start-0 end-0 mx-4">
+          <div class="container-fluid px-0">
+            <a class="navbar-brand font-weight-bolder ms-sm-3" href="https://demos.creative-tim.com/soft-ui-design-system/index.html" rel="tooltip" title="Designed and Coded by Creative Tim" data-placement="bottom" target="_blank">
+              Job Saathi
+            </a>
+            <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon mt-2">
+                <span class="navbar-toggler-bar bar1"></span>
+                <span class="navbar-toggler-bar bar2"></span>
+                <span class="navbar-toggler-bar bar3"></span>
+              </span>
+            </button>
+            <div class="collapse navbar-collapse pt-3 pb-2 py-lg-0 w-100" id="navigation">
+              <ul class="navbar-nav navbar-nav-hover ms-lg-12 ps-lg-5 w-100">
+                <li class="nav-item dropdown dropdown-hover mx-2">
+                
+                </li>
+        
+                <li class="nav-item dropdown dropdown-hover mx-2">
+         
+                </li>
+        
+                <li class="nav-item dropdown dropdown-hover mx-2">
+         
+                </li>
+                <li class="nav-item ms-lg-auto" style="visibility: hidden;">
+                
+                </li>
+                <li class="nav-item my-auto ms-3 ms-lg-0">
+              
+                </li>
+                <li class="nav-item my-auto ms-3 ms-lg-0">
+                  
+                  <a href="/dashboard" class="btn btn-sm  btn-outline-primary  btn-round mb-0 me-1 mt-2 mt-md-0">Dashboard</a>
+                  
+                </li>
+                <li class="nav-item my-auto ms-3 ms-lg-0">
+                  
+                  <a href="/logout" class="btn btn-sm  bg-gradient-primary  btn-round mb-0 me-1 mt-2 mt-md-0">Logout</a>
+                  
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <!-- -------- START HEADER 8 w/ card over right bg image ------- -->
+  <header>
+    <div class="page-header min-vh-85">
+      <div>
+        <img class="position-absolute fixed-top ms-auto w-50 h-100 z-index-0 d-none d-sm-none d-md-block border-radius-section border-top-end-radius-0 border-top-start-radius-0 border-bottom-end-radius-0" src="{{url_for('static', filename='assets/img/curved-images/curved8.jpg')}}" alt="image">
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-7 d-flex justify-content-center flex-column">
+            <div class="card d-flex blur justify-content-center p-4 shadow-lg my-sm-0 my-sm-6 mt-8 mb-5">
+              <div class="text-center">
+                <h3 class="text-gradient text-primary">Job Details</h3>
+              </div>
+              <form action="/apply/job/{{job_details['job_id']}}" method="post" onsubmit="return applySubmitForm()">
+                {% if applied %}
+                <button class="btn btn-success my-3" disabled>APPLIED</button>
+                {% endif %}
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label"><b>Company Name</b></label>
+                    <input type="text" class="form-control" value="{{job_details['user_details'][0]['company_name']}}" name="job_title" placeholder="Job Title" disabled>
+                  </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label"><b>Job Title</b></label>
+                    <input type="text" class="form-control" value="{{job_details['job_title']}}" name="job_title" placeholder="Job Title" disabled>
+                  </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label"><b>Job Type</b></label>
+                    {% if job_details['job_type'] == "part_time" %}
+                    <input type="text" class="form-control" value="Part Time" name="job_title" placeholder="Job Type" disabled>
+                    {% else %}
+                    <input type="text" class="form-control" value="Full Time" name="job_title" placeholder="Job Type" disabled>
+                    {% endif %}
+                  </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label"><b>Mode of Work</b></label>
+                    {% if job_details['mode_of_work'] == "Remote" %}
+                    <input type="text" class="form-control" value="Remote" name="mode_of_work" placeholder="Mode of Work" disabled>
+                    {% else%}
+                    <input type="text" class="form-control" value="Onsite" name="mode_of_work" placeholder="Mode of Work" disabled>
+                    {% endif %}
+          
+                  </div>
+                  {% if job_details['mode_of_work'] == "Onsite" %}
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label"><b>Job Location</b></label>
+                    <input type="text" class="form-control" value="{{job_details['job_location']}}" name="job_location" placeholder="Job Location" disabled>
+                  </div>
+                  {% endif  %}
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label"><b>Salary Range</b></label>
+                    <input type="text" class="form-control" value="{{job_details['salary_range']}}" name="job_location" placeholder="Job Location" disabled>
+                  </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label"><b>Job Description</b></label>
+                    <textarea type="text" class="form-control"  name="job_description" placeholder="Job Description" rows="7"  disabled>{{job_details['job_description']}}</textarea>
+                  </div>
+                  {% if applied %}
+                  <button class="btn btn-success my-3" disabled>APPLIED</button>
+                  {% else %}
+                  <button class="btn btn-primary my-3" type="submit">APPLY</button>
+                  {% endif %}
+            </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- -------- END HEADER 8 w/ card over right bg image ------- -->
+
+  <!--   Core JS Files   -->
+  <script>
+    function applySubmitForm(){
+      let a = confirm("Are you sure you want to aplly for this job?");
+      if (a){
+        return true;
+      }
+      else{
+        return false;
+      }
+    }
+  </script>
+  <script src="{{url_for('static', filename='assets/js/core/popper.min.js')}}" type="text/javascript"></script>
+  <script src="{{url_for('static', filename='assets/js/core/bootstrap.min.js')}}" type="text/javascript"></script>
+  <script src="{{url_for('static', filename='assets/js/plugins/perfect-scrollbar.min.js')}}"></script>
+  <!--  Plugin for Parallax, full documentation here: https://github.com/wagerfield/parallax  -->
+  <script src="{{url_for('static', filename='assets/js/plugins/parallax.min.js')}}"></script>
+  <!-- Control Center for Soft UI Kit: parallax effects, scripts for the example pages etc -->
+  <!--  Google Maps Plugin    -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTTfWur0PDbZWPr7Pmq8K3jiDp0_xUziI"></script>
+  <script src="{{url_for('static', filename='assets/js/soft-design-system.min.js')}}" type="text/javascript"></script>
+</body>
+
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Register | A2ZRecruit</title>
+    <link rel="stylesheet" href="static/new/navbar/t_navbar.css">
+    <link
+    rel="shortcut icon"
+    href="static/images/favicon.png"
+    type="image/x-icon"
+  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <style>
+        #bottom_navbar{
+    display: none;
+}
+#login_navbar{
+    margin: auto;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    /* overflow: hidden; */
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: white;
+    height: 10vh;
+}
+.t_login_container{
+    border:1px solid transparent;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+    width:40vw;
+    /* margin: auto; */
+    padding: 50px;
+}
+@media (max-width: 790px) {
+    #bottom_navbar{
+        display: block;
+    }
+    .t_elements{
+        display: none;
+    }
+    .t_button{
+        display: none;
+    }
+    .t_login_left_container{
+        display: none;
+    }
+    .t_login_container{
+        width: 100vw;
+    }
+}
+        .navbar {
+    font-family: "Varela Round", sans-serif;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 110vw;
+    background-color: #fff;
+    /* padding: 10px 0; */
+    z-index: 100;
+    box-shadow: 10px 10px 20px #c7c7c7, 
+                -10px -10px 20px #ffffff;
+}
+
+.navbar ul {
+    list-style-type: none;
+    text-align: center;
+    float: left;
+    margin-left: -1rem;
+}
+
+.navbar ul li {
+    display: inline-block;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #000;
+    padding: 0px 20px;
+    display: block;
+}
+
+.navbar ul li a:hover {
+    background-color: #eee6e6;
+}
+
+.t_login_div1 div:nth-child(1){
+   display: flex;
+   justify-content: space-between;
+   margin-bottom: 0px;
+}
+.t_login-form input{
+    width: 95%;
+    height: 7vh;
+}
+.t_login-form ::placeholder{
+    padding: 10px;
+    font-size: larger;
+}
+.t_login_submit_btn{
+    margin: 10px 0 10px 0;
+    padding: 10px;
+    width: 95%;
+    font-weight: 600;
+    color: white;
+    background-color: #457EFF;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+.t_login_btnn img{
+    width: 5%;
+    padding:9px;
+    margin: 6px 0 0 5px;
+    /* height: 5vh; */
+}
+.t_login_btnn{
+    width: 95%;
+    height: 8vh;
+    border-radius: 40px;
+    border: 1px solid transparent;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    cursor: pointer;
+}
+.t_login_left_container{
+    border: 1px solid transparent;
+    height: 100%;
+    width: 40%;
+    left: auto;
+    right: auto;
+    position: relative;
+    margin: 60px 0 0 100px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+}
+.t_login_box{
+    /* border: 1px solid black; */
+    display: flex;
+    margin: 10px;
+    margin-top: 50px;
+}
+.t_reg_for_free_btn{
+    width: 20vw;
+    padding: 12px;
+    color: #457EFF;
+    font-weight: 600;
+    border: 1px solid #457EFF;
+    background: white;
+    cursor: pointer;
+}
+.t_cont_div{
+    display: flex;
+}
+.t_cont_div p{
+    margin:0 -10px 20px 20px ;
+}
+.t_login_left_container img:nth-child(1){
+   height: 3vh;
+}
+.t_login_left_container1{
+    margin: 50px 0 0 70px;
+}
+
+    </style>
+</head>
+<body>
+    <nav class="navbar" id="bottom_navbar" >
+        <ul>
+            <li><a href="/"><i class="fa fa-home" style="font-size:24px"></i> <br>Home</a></li>
+            <li><a href="/about-us"><i class="fa fa-user" style="font-size:24px"></i> <br>About</a></li>
+            <li><a href="/contact-us"><i class="fa fa-phone" style="font-size:24px"></i> <br>Contact</a></li>
+            <li><a href="/login"><i class="fa fa-sign-in" style="font-size:24px"></i> <br>Login</a></li>
+        </ul>
+    </nav>
+    <div id="login_navbar">    <div class="t_logo"><a href="#"><img src="static/images/mbsalogo.png" alt="Error" id="mainpagepaileja" height="60" width="250"></a></div>
+    <div class="t_elements">
+        <ul class="t_elements_container">
+            <li class="t_elements_li">
+                <a href="/" class="t_anchor_tag"><h3 style="margin-right: 20px;" id="t_h3_J">Home</h3></a>
+            </li>
+            <li class="t_elements_li">
+                <a href="/" class="t_anchor_tag"><h3 style="margin-right: 20px;" id="t_h3_J">About Us</h3></a>
+            </li>
+            <li class="t_elements_li">
+                <a href="/" class="t_anchor_tag"><h3 style="margin-right: 20px;" id="t_h3_J">Contact Us</h3></a>
+            </li>
+
+        </ul>
+    </div>
+    <div class="t_button">
+        <a href="/login"><button class="t_button_1">Login</button></a>
+        <a href="/signup"><button class="t_button_2">Register</button></a>
+    </div>
+     <div class="t_foremployers_container">
+    
+    </div></div>
+    <div class = "t_login_box">  
+        <div class="t_login_left_container">
+            <div class="t_login_left_container1">
+                <h3 style="font-family: Arial, Helvetica, sans-serif;">New to JobSaathi?</h3>
+                <div class="t_cont_div">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1828/1828649.png" alt="Error">
+                    <p>Smart Chatbots</p>
+                </div>
+                <div class="t_cont_div">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1828/1828649.png" alt="Error">
+                    <p>AI based curated job list</p>
+                </div>
+                <div class="t_cont_div">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1828/1828649.png" alt="Error">
+                    <p>AI Job Filters</p>
+                </div>
+                <div class="t_cont_div">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1828/1828649.png" alt="Error">
+                    <p>Easy one click job apply</p>
+                </div>
+                <br>
+            <a href="/login"><button class="t_reg_for_free_btn">Already a member? Login</button></a>
+            </div>
+            <br><br>
+            <img src="https://static.naukimg.com/s/5/105/i/register.png" alt="Error" style="width: 40%;margin:2% 60%;">
+        </div>
+    
+        <div class="t_login_container">
+            <div class="t_login_div1">
+                <div>
+                    <h2 style="font-family: Arial, Helvetica, sans-serif;">Login</h2>
+                    <a href="./login" style="text-decoration: none;font-family: Arial, Helvetica, sans-serif;color: #457EFF;"></a>
+                </div>
+                <p>Login to JobSaathi to see and apply for all the jobs!</p>
+          <br><br>
+         <a href="/login"><button class="t_login_btnn"><div class="t_div-inside"><img src="https://cdn-icons-png.flaticon.com/512/281/281764.png" alt="Error"><h5 style="margin:auto;font-size:larger;color: gray;">Sign in with Google</h5></div></button></a>
+            </div>
+            <center>
+                <img src="static/images/chatbot.png" alt="Error" style="width: 70%">
+            </center>
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>BillBot | A2ZRecruit</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link
+  rel="shortcut icon"
+  href="{{url_for('static', filename='images/favicon.png')}}"
+  type="image/x-icon"
+/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@2/dist/zero-md.min.js"></script>
+</head>
+
+<body >
+<style>
+    #loading-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      backdrop-filter: blur(0.2px); /* Add blur effect to the background */
+    }
+  body{
+    overflow-x: hidden;
+  }
+  video {
+    width: 15%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Optional: Add a box shadow to the video */
+      z-index: 10000; /* Higher z-index to bring the video above other components */
+    }
+  .disabled_button{
+   cursor: auto;
+   background-color: gray;
+  }
+  .normal_button{
+    cursor: pointer;
+   background-color: #ff3399;
+  }
+</style>
+<div id="loading-overlay" style="display: none;">
+  <video autoplay loop muted>
+    <source src="{{url_for('static', filename='animations/loading.mp4')}}" type="video/mp4"> <!-- Replace with your loading video -->
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+<div class="container-fluid">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/"><img src="{{url_for('static',filename='images/mbsalogo.png')}}" alt="Error" id="mainpagepaileja" height="60"
+        width="250"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#"></a>
+          </li>
+
+        </ul>
+        <section class="d-flex" role="search">
+          <form action="/resume_built" method="post" onsubmit="return resumeBuilt()">
+            <input type="hidden" id="resume_html" name="resume_html">
+            <button type="submit" class="btn btn-primary my-2 mx-3" style="background-color: #fa8261; box-shadow: var(--neomorph-shadow); border:  none;">Save Resume</button>
+          </form>
+          <a type="submit" class="btn btn-primary my-2" style="margin-right: 10px; background-color: #fa8261; box-shadow: var(--neomorph-shadow); border: none;" href="/edit/mdresume">Edit Manually</a>
+          <a type="submit" class="btn btn-primary my-2" style="margin-right: 10px; background-color: #fa8261; box-shadow: var(--neomorph-shadow); border: none;" href="/dashboard">Dashboard</a>
+        </section>
+      </div>
+    </div>
+  </nav>
+</div>
+    
+  <div id="chat-container">
+    <section class="msger" id="billbot">
+      <header class="msger-header">
+        <div class="msger-header-title">
+          <i class="fas fa-bug"></i> BillBot <i class="fas fa-bug"></i>
+          <div id="loader" style="display: none;"><h3>Processing...</h3></div>
+        </div>
+      </header>
+  
+      <main class="msger-chat">
+  
+  
+      </main>
+      <form class="msger-inputarea">
+        <input type="text" class="msger-input" id="textInput" placeholder="Enter your commad...">
+        <button type="submit" class="msger-send-btn" id="textInputButton" style="cursor: auto;background-color: gray;" disabled >Send</button>
+      </form>
+    </section>
+  
+    <section class="msger1" id="resume" oninput="resumeHtmlChanged()">
+ <div style="width: 90%;margin: auto;">
+  <zero-md  no-shadow="" id="resume_md">
+    <script type="text/markdown" data-dedent id="script_resume_md">
+
+      {{resume_html}}
+        
+      </script>
+</zero-md>
+
+ </div>
+    </section>
+  </div>
+  <!-- partial -->
+  <script src='https://use.fontawesome.com/releases/v5.0.13/js/all.js'></script>
+  <script>
+  var nxt_build_status = "{{nxt_build_status}}"
+  if (nxt_build_status == "contactinfo"){
+    document.getElementById("resume_md").style.display = 'none'
+  }
+  else{
+    document.getElementById("resume_md").style.display = ''
+
+  }
+  // alert(nxt_build_status)
+  var textInput = document.getElementById('textInput')
+  var textInputButton = document.getElementById('textInputButton')
+  textInput.addEventListener('input', ()=>{
+    value = textInput.value.trim()
+    if(value.length>0){
+      textInputButton.removeAttribute('disabled')
+      textInputButton.style.cursor='pointer'
+      textInputButton.style.background='#ff3399'
+    }
+    else{
+      textInputButton.setAttribute('disabled', true)
+      textInputButton.style.cursor='auto'
+      textInputButton.style.background='gray'
+    }
+  })
+
+    function decodeHtmlEntities(encodedString) {
+    var doc = new DOMParser().parseFromString(encodedString, 'text/html');
+    return doc.documentElement.textContent;
+}
+
+    const msgerForm = get(".msger-inputarea");
+    const msgerInput = get(".msger-input");
+    const msgerChat = get(".msger-chat");
+    const loader = document.getElementById('loader');
+    const resume_section = document.getElementById("script_resume_md")
+
+
+    // Icons made by Freepik from www.flaticon.com
+    const BOT_IMG = "/static/images/billbot.png";
+    const PERSON_IMG = "/static/images/user.png";
+    const BOT_NAME = "BillBot";
+    const PERSON_NAME = "You";
+
+    all_messages = "{{messages}}"
+    all_messages = decodeHtmlEntities(all_messages)
+    var all_messages = all_messages.replace(/'/g, '"');
+    all_messages = JSON.parse(all_messages)
+    for(var key in all_messages){
+        user = all_messages[key]['user']
+        msg = all_messages[key]['msg']
+        if(user==="billbot"){
+
+            appendMessage(BOT_NAME, BOT_IMG, "left", msg);
+        }
+        else{
+            
+            appendMessage(PERSON_NAME, PERSON_IMG, "right", msg);
+        }
+    }
+
+    // for(let i=0; i<all_messages.length;i++){
+    //     source
+    // }
+
+    msgerForm.addEventListener("submit", event => {
+      event.preventDefault();
+
+      const msgText = msgerInput.value;
+      if (!msgText) return;
+
+      appendMessage(PERSON_NAME, PERSON_IMG, "right", msgText);
+      msgerInput.value = "";
+      textInputButton.setAttribute('disabled', true)
+      textInputButton.style.cursor='auto'
+      textInputButton.style.background='gray'
+      botResponse(msgText);
+    });
+
+    function appendMessage(name, img, side, text) {
+      //   Simple solution for small apps
+      const msgHTML = `
+<div class="msg ${side}-msg">
+  <div class="msg-img" style="background-image: url(${img})"></div>
+
+  <div class="msg-bubble">
+    <div class="msg-info">
+      <div class="msg-info-name">${name}</div>
+    </div>
+
+    <div class="msg-text">${text}</div>
+  </div>
+</div>
+`;
+
+      msgerChat.insertAdjacentHTML("beforeend", msgHTML);
+      msgerChat.scrollTop += 500;
+    }
+    
+    async function botResponse(rawText) {
+      loader.style.display = 'block'
+  try {
+    // Bot Response
+    setTimeout(function () {
+      showLoadingAnimation()
+    }, 700);
+    const data = await $.post("/resume_build", { msg: rawText, nxt_build_status: nxt_build_status });
+
+    console.log(rawText);
+    console.log(data);
+
+    const resume_html = data['html_code'];
+    const nxt_messages = data['nxt_messages'];
+    nxt_build_status = data['nxt_build_status'];
+    if (nxt_build_status == "contactinfo"){
+    document.getElementById("resume_md").style.display = 'none'
+  }
+  else{
+    document.getElementById("resume_md").style.display = ''
+
+  }
+    resume_section.innerHTML = resume_html
+    appendMessage(BOT_NAME, BOT_IMG, "left", "Resume Updated!");
+    for (let i = 0; i < nxt_messages.length; i++) {
+      message = nxt_messages[i]['msg']
+      appendMessage(BOT_NAME, BOT_IMG, "left", message);
+    }
+  } catch (error) {
+    removeLoadingVideo()
+    console.error('Error:', error);
+    // Handle the error as needed
+  } finally{
+    removeLoadingVideo()
+    loader.style.display = 'none'
+  }
+}
+
+  
+
+    // Utils
+    function get(selector, root = document) {
+      return root.querySelector(selector);
+    }
+
+    function formatDate(date) {
+      const h = "0" + date.getHours();
+      const m = "0" + date.getMinutes();
+
+      return `${h.slice(-2)}:${m.slice(-2)}`;
+    }
+
+  function resumeBuilt(){
+    document.getElementById("resume_html").value = document.getElementById('script_resume_md').innerHTML
+    let a = confirm("Are you sure you have added all the neccessary skills and data for finding your Job?")
+    if(a){
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
+
+  function resumeHtmlChanged(){
+    // alert('saiaditya')
+  }
+
+  </script>
+ <script>
+  function showLoadingAnimation(){
+   var loadingOverlay = document.getElementById('loading-overlay');
+    loadingOverlay.style.display = '';
+  }
+  function removeLoadingVideo() {
+    // Remove loading overlay
+    var loadingOverlay = document.getElementById('loading-overlay');
+    loadingOverlay.style.display = 'none';
+    // Add additional code for processing completion
+
+    // Optional: Unblur the background
+    document.body.style.backdropFilter = 'none';
+  }
+</script>
+</body>
+
+</html>

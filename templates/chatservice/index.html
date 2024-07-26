@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lekton|Shadows+Into+Light" rel="stylesheet">
+    <link
+    rel="shortcut icon"
+    href="{{url_for('static', filename='images/favicon.png')}}"
+    type="image/x-icon"
+  />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" type="text/css" href="static/style.css"> -->
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='chatservice/style.css')}}">
+    <title>JobSaathi Chats</title>
+</head>
+
+<body style="height: 100vh;">
+    <!-- {% macro catch(on_exception) %}
+    {{ handle_catch(caller, on_exception) }}
+    {% endmacro %} -->
+    <div class="container-fluid" style="height: 100%;">
+        <div class="row" style="height: 100%;">
+            <div class="col-xs-12 col-md-12 left-pane" style="height: 100%;">
+                <div class="row" style="height: 100%;">
+                    <div class="col-12 profile-nav">
+                        <div class="row">
+                            <!-- profile bar -->
+                            <div class="col-12 d-flex bg-primary text-white py-0 px-1 px-md-2 border border-secondary border-bottom-0">
+                                <!-- profile pic -->
+                                <div class="profile-pic">
+                                    <a class="navbar-brand" href="/chats">
+                                        <img src="{{url_for('static', filename='images/mbsalogo.png')}}" class="rounded-circle" style="width: 200px;height: 50px;">
+                                    </a>
+                                </div>
+                                <div class="d-flex align-items-center h5 mb-0 nav-name">
+                                    <p class="mb-0">All Chats</p>
+                                </div>
+                                <!-- list of nav icons -->
+                             
+                            </div>
+                            <!-- End of profile bar -->
+                            <!-- Search bar -->
+                            <div class="col-12 bg-primary py-3 search-bar border border-secondary">
+                                <div class="input-group md-form form-sm form-2 pl-0">
+                                    <input class="form-control my-0 py-1 red-border" type="text" placeholder="Search" aria-label="Search">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text red lighten-3" id="basic-text1"><i class="fa fa-search text-grey" aria-hidden="true"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End of search bar -->
+                        </div>
+                        <!--End of row for profile bar and search  -->
+                    </div>
+                    <!-- Chat list in left pane (Full width on small screens) -->
+                    {% if all_connections!=[] %}
+                    <div class="col-12 chat-list px-0" style="height: calc(100% - 133px);">
+
+                        <!-- row for chat in big screens - no links since message body is on right pane -->
+                        <div class="d-none d-md-flex flex-column chats">
+                            <!-- First recent-chat -->
+                            {% for connection in all_connections%}
+                            {% set userid = connection['hirer_id'] if purpose == 'candidate' else connection['candidate_id'] %}
+                            <a href="/chat/{{userid}}/{{connection['job_id']}}">
+                                <div class="d-flex chat">
+                                    <!-- sender avatar -->
+                                    <div class="">
+                                        <img src="{{url_for('static', filename='chatservice/img/user1.png')}}" class="rounded-circle" style="width: 55px;">
+                                    </div>
+                                    <div class="d-flex flex-column justify-content-center mx-2">
+                                        {% set name = connection['hirer_details'][0]['company_name'] if purpose == 'candidate' else connection['candidate_details'][0]['candidate_name'] %}
+                                        <span class="font-weight-bold">{{name}} [{{connection['job_details'][0]['job_title']}}]</span>
+                                        <div class="">
+                                           
+                                        </div>
+                                    </div>
+                                    <div class="ml-auto">
+                                     
+                                   
+                                    </div>
+                                </div>
+                            </a>
+                        {% endfor %}
+                        </div>
+
+                        <!-- row for chats on mobile with links-->
+                        <div class="d-flex flex-column d-md-none chats">
+                            {% for connection in all_connections%}
+                            {% set userid = connection['hirer_id'] if purpose == 'candidate' else connection['candidate_id'] %}
+                            <a href="/chat/{{userid}}/{{connection['job_id']}}">
+                                <div class="d-flex chat">
+                                    <!-- sender avatar -->
+                                    <div class="">
+                                        <img src="{{url_for('static', filename='chatservice/img/user1.png')}}" class="rounded-circle" style="width: 55px;">
+                                    </div>
+                                    <div class="d-flex flex-column justify-content-center mx-2">
+                                        {% set name = connection['hirer_details'][0]['company_name'] if purpose == 'candidate' else connection['candidate_details'][0]['candidate_name'] %}
+                                        <span class="font-weight-bold">{{name}} [{{connection['job_details'][0]['job_title']}}]</span>
+                                        <div class="">
+                                            
+                                        </div>
+                                    </div>
+                                    <!-- <div class="ml-auto">
+                                        <small class="text-muted float-right text-secondary">23:12
+                                    </small>
+                                    </div> -->
+                                </div>
+                            </a>
+                            {% endfor %}
+                           
+
+                        </div>
+                        <!-- end of row for chats -->
+                    </div>
+                    {% else %}
+                    <div class="col-12 chat-list px-0" style="height: calc(100% - 133px);">
+                    <center>
+                        <p>No Chats Initiated Yet!</p>
+                    </center>
+                    {% endif %}
+                </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Modal for status -->
+    <div class="modal fade" id="status-modal" tabindex="-1" role="dialog" aria-labelledby="status-modal-label" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content bg-info text-white">
+          <div class="modal-header">
+            <h5 class="modal-title" id="status-modal-label">Add A Friend</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form action="/addfriend" method="post">     
+          <div class="modal-body text-center">
+            <div class="form-floating my-2">
+                <label for="floatingInput">Email Of Friend</label>
+                <input type="email" class="form-control" name="friend_add_email" placeholder="name@example.com">
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Add</button>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Initial modal called through javascript for introduction -->
+    <!-- <div class="modal fade" id="initial-modal" tabindex="-1" role="dialog" aria-labelledby="initial-modal-label" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content bg-info text-white">
+          <div class="modal-header">
+            <h5 class="modal-title" id="initial-modal-label">Hey! Try out features</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="h5 font-weight-normal">
+                **Press three dots to find out options
+            </div>
+            <div class="h5 font-weight-normal">
+                **Click on profile photo
+            </div>
+            <div class="h5 font-weight-normal">
+                **Check responsiveness
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{{url_for('static', filename='chatservice/script.js')}}"></script>
+
+    <script type="text/javascript">
+        
+
+        $(document).ready(function(){
+
+            $('#initial-modal').modal('show');
+
+        });
+
+    </script>
+
+</body>
+
+</html>

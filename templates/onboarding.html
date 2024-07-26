@@ -1,0 +1,279 @@
+<!--
+=========================================================
+* Soft UI Design System - v1.0.9
+=========================================================
+
+* Product Page: https://www.creative-tim.com/product/soft-design-system
+* Copyright 2023 Creative Tim (https://www.creative-tim.com)
+* Licensed under MIT (https://www.creative-tim.com/license)
+* Coded by Creative Tim
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="apple-touch-icon" sizes="76x76" href="static/assets/img/apple-icon.png">
+  <link
+  rel="shortcut icon"
+  href="{{url_for('static', filename='images/favicon.png')}}"
+  type="image/x-icon"
+/>
+  <title>
+    Onboarding | JobSaathi
+  </title>
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+  <!-- Nucleo Icons -->
+  <link href="static/assets/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="static/assets/css/nucleo-svg.css" rel="stylesheet" />
+  <!-- Font Awesome Icons -->
+  <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+  <link href="static/assets/css/nucleo-svg.css" rel="stylesheet" />
+  <!-- CSS Files -->
+  <link id="pagestyle" href="static/assets/css/soft-design-system.css?v=1.0.9" rel="stylesheet" />
+  <!-- Nepcha Analytics (nepcha.com) -->
+  <!-- Nepcha is a easy-to-use web analytics. No cookies and fully compliant with GDPR, CCPA and PECR. -->
+  <script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
+</head>
+
+<body class="forms-sections">
+  <!-- Navbar Light -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+    <div class="container">
+      <a class="navbar-brand" href="/" rel="tooltip" title="Designed and Coded by Creative Tim" data-placement="bottom" target="_blank">
+        <img src="{{url_for('static', filename='images/mbsalogo.png')}}" class="navbar-brand-img h-100" alt="main_logo" height="50" width="150"><br>
+      </a>
+      <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon mt-2">
+          <span class="navbar-toggler-bar bar1"></span>
+          <span class="navbar-toggler-bar bar2"></span>
+          <span class="navbar-toggler-bar bar3"></span>
+        </span>
+      </button>
+      <div class="collapse navbar-collapse w-100 pt-3 pb-2 py-lg-0 ms-lg-12 ps-lg-5" id="navigation">
+        <ul class="navbar-nav navbar-nav-hover w-100">
+          <li class="nav-item ms-lg-auto">
+        
+          </li>
+          <li class="nav-item my-auto ms-3 ms-lg-0">
+        
+          </li>
+          <li class="nav-item my-auto ms-3 ms-lg-0">
+            <a href="/logout" class="btn btn-sm  bg-gradient-primary  btn-round mb-0 me-1 mt-2 mt-md-0">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- End Navbar -->
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-lg-12 mx-auto">
+        <div class="mb-4 w-25">
+        </div>
+        <div class="position-relative border-radius-xl overflow-hidden shadow-lg mb-7">
+          <div class="container border-bottom">
+            <div class="row justify-space-between py-2">
+              <div class="col-lg-3 me-auto">
+                <p class="lead text-dark pt-1 mb-0">Welcome to A2ZRecruit</p>
+              </div>
+              <div class="col-lg-3">
+             
+              </div>
+            </div>
+          </div>
+          <div class="tab-content tab-space">
+            <div class="tab-pane active" id="preview-forms-simple">
+  <div class="container py-4">
+    <div class="row">
+      <div class="col-lg-7 mx-auto d-flex justify-content-center flex-column">
+        <h3 class="text-center">Let's get started</h3>
+        <!-- <form role="form" id="contact-form" method="post" autocomplete="off"> -->
+          <div class="card-body">
+            <div class="mb-4">
+              <label>Account Username</label>
+              <div class="input-group">
+                <input type="email" class="form-control" value="{{user_name}}" placeholder="Account Username" disabled>
+              </div>
+            </div>
+            <div class="form-check mb-3">
+              <input class="form-check-input" type="radio" name="purpose" value="candidate" id="candidateradio" checked>
+              <label class="custom-control-label" for="customRadio1">Job Seeker</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="purpose" value="hirer" id="hireradio">
+              <label class="custom-control-label" for="customRadio2">Hirer</label>
+            </div>
+            <form action="/onboarding" id="candidateform" method="post">
+            <input type="hidden" name="purpose" value="candidate">
+            <label>Name</label>
+            <div class="input-group">
+              <input type="text" name="candidate_name" class="form-control" placeholder="Name of the Candidate" required>
+            </div>
+            <label>Mobile No.</label>
+            <div class="input-group">
+              <input type="text" name="candidate_mobno" class="form-control"placeholder="Mobile No." required>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-check form-switch mb-4">
+                  <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" required>
+                  <label class="form-check-label" for="flexSwitchCheckDefault">I agree to the <a href="javascript:;" class="text-dark"><u>Terms and Conditions</u></a>.</label>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <button type="submit" class="btn bg-gradient-dark w-100">Onboard</button>
+              </div>
+            </div>
+          </form>
+          <form action="/onboarding" class="my-2" style="display: none;" id="hirerform" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="purpose" value="hirer">
+            <label>Company Logo</label> <br>
+            <img src="" alt="" width="140" height="140" class="bd-placeholder-img rounded-circle" id="company_logo_link"> <br>
+            <input class="my-2" type="file" name="company_logo" id="company_logo_img" accept=".jpg, .jpeg, .png">
+            <br>
+            <label>Name of the Company</label>
+            <div class="input-group">
+              <input type="text"  class="form-control" placeholder="Name of the Company" name="company_name" required>
+            </div>
+            <label>Representative Name</label>
+            <div class="input-group">
+              <input type="text" class="form-control"placeholder="Representative Name" name="company_representative_name"
+              required>
+            </div>
+            <label>Mobile No.</label>
+            <div class="input-group">
+              <input type="text" class="form-control"placeholder="Mobile No." name="company_representative_mobno" required>
+            </div>
+            <label>GST No.</label>
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="GST No." name="company_gstno" required>
+            </div>
+            <label>PAN No.</label>
+            <div class="input-group">
+              <input type="text" class="form-control"placeholder="PAN  No." name="company_pan" required>
+            </div>
+            <label>Company Description</label>
+            <div class="input-group">
+              <textarea name="company_description" id="" cols="30" rows="3" class="form-control" placeholder="Company Description in One line" required></textarea>
+              
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-check form-switch mb-4">
+                  <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" required>
+                  <label class="form-check-label" for="flexSwitchCheckDefault">I agree to the <a href="javascript:;" class="text-dark"><u>Terms and Conditions</u></a>.</label>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <button type="submit" class="btn bg-gradient-dark w-100">Onboard</button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+          </div>
+        <!-- </form> -->
+      </div>
+    </div>
+  </div>
+</section>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- -------- START FOOTER 3 w/ COMPANY DESCRIPTION WITH LINKS & SOCIAL ICONS & COPYRIGHT ------- -->
+  <footer class="footer py-5">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-8 mx-auto text-center mb-4 mt-2">
+          <a href="javascript:;" target="_blank" class="text-secondary me-xl-4 me-4">
+            <span class="text-lg fab fa-dribbble"></span>
+          </a>
+          <a href="javascript:;" target="_blank" class="text-secondary me-xl-4 me-4">
+            <span class="text-lg fab fa-twitter"></span>
+          </a>
+          <a href="javascript:;" target="_blank" class="text-secondary me-xl-4 me-4">
+            <span class="text-lg fab fa-instagram"></span>
+          </a>
+          <a href="javascript:;" target="_blank" class="text-secondary me-xl-4 me-4">
+            <span class="text-lg fab fa-pinterest"></span>
+          </a>
+          <a href="javascript:;" target="_blank" class="text-secondary me-xl-4 me-4">
+            <span class="text-lg fab fa-github"></span>
+          </a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-8 mx-auto text-center mt-1">
+          <p class="mb-0 text-secondary">
+            Copyright © <script>
+              document.write(new Date().getFullYear())
+            </script> A2ZRecruit | MBSA
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script>
+    const hireradio = document.getElementById('hireradio');
+    const candidateradio = document.getElementById('candidateradio');
+    const candidateform = document.getElementById("candidateform")
+    const hirerform = document.getElementById("hirerform")
+    // Add event listener to each radio button
+    candidateradio.addEventListener('change', function () {
+      candidateform.style.display = "block"
+      hirerform.style.display = "none"
+      hirerform.reset()
+    });
+
+    hireradio.addEventListener('change', function () {
+      hirerform.style.display = "block"
+      candidateform.style.display = "none"
+      candidateform.reset()
+    });
+
+  </script>
+  <script>
+    document.getElementById('company_logo_img').addEventListener('change', function (event) {
+            const fileInput = event.target;
+            const imagePreview = document.getElementById('company_logo_link');
+
+            if (fileInput.files && fileInput.files[0]) {
+                const reader = new FileReader();
+
+                reader.onload = function (e) {
+                    imagePreview.src = e.target.result;
+                };
+
+                reader.readAsDataURL(fileInput.files[0]);
+            } else {
+                imagePreview.src = '';
+            }
+        });
+  </script>
+  <!-- -------- END FOOTER 3 w/ COMPANY DESCRIPTION WITH LINKS & SOCIAL ICONS & COPYRIGHT ------- -->
+  <!--   Core JS Files   -->
+  <script src="static/assets/js/core/popper.min.js" type="text/javascript"></script>
+  <script src="static/assets/js/core/bootstrap.min.js" type="text/javascript"></script>
+  <script src="static/assets/js/plugins/perfect-scrollbar.min.js"></script>
+  <script src="static/assets/js/plugins/prism.min.js"></script>
+  <script src="static/assets/js/plugins/highlight.min.js"></script>
+  <!--  Plugin for Parallax, full documentation here: https://github.com/wagerfield/parallax  -->
+  <script src="static/assets/js/plugins/parallax.min.js"></script>
+  <!-- Control Center for Soft UI Kit: parallax effects, scripts for the example pages etc -->
+  <!--  Google Maps Plugin    -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTTfWur0PDbZWPr7Pmq8K3jiDp0_xUziI"></script>
+  <script src="static/assets/js/soft-design-system.min.js?v=1.0.9" type="text/javascript"></script>
+</body>
+
+</html>

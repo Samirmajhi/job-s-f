@@ -1,0 +1,1892 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A2ZRecruit</title>
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="static/images/favicon.png" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Akatab">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+        integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+        integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+        href="{{url_for('static', filename='new/Naya tropical/Landing Page by Nandlal/homep.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='new/Naya tropical/navbar/t_navbar.css')}}" />
+    <!-- <link id="pagestyle" href="static/assets/css/soft-ui-dashboard.css?v=1.0.7" rel="stylesheet" /> -->
+</head>
+<style>
+    body {
+        margin: 0px;
+    }
+
+    .t_elements_container {
+        display: flex;
+        margin-left: 0;
+        list-style: none;
+    }
+
+    .navibarr {
+        margin: auto;
+        width: 100vw;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /* overflow: hidden; */
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+        background-color: white;
+        height: 10vh;
+        font-family: "Varela Round", sans-serif;
+
+    }
+
+    .hamburger-menu {
+        display: none;
+        /* Hide by default on larger screens */
+        cursor: pointer;
+    }
+
+    /* Style for each bar in the hamburger menu */
+    .bar {
+        width: 25px;
+        height: 3px;
+        background-color: #333;
+        margin: 5px 0;
+    }
+
+    #chatsicon-mob {
+        display: none;
+    }
+
+    #skills {
+        width: 715px;
+    }
+
+    #bottom_navbar {
+        display: none;
+    }
+
+    .navbar {
+        font-family: "Varela Round", sans-serif;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 110vw;
+        background-color: #fff;
+        padding: 0px 0;
+        z-index: 1000;
+        box-shadow: 10px 10px 20px #c7c7c7,
+            -10px -10px 20px #ffffff;
+    }
+
+    .navbar ul {
+        list-style-type: none;
+        text-align: center;
+        float: left;
+        margin-left: -1rem;
+    }
+
+    .navbar ul li {
+        display: inline-block;
+    }
+
+    .navbar ul li a {
+        text-decoration: none;
+        color: #000;
+        padding: 0px 20px;
+        display: block;
+    }
+
+    .navbar ul li a:hover {
+        background-color: #eee6e6;
+    }
+
+    .carousel-container {
+        position: relative;
+        width: 80%;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+
+    .carousel1 {
+        display: flex;
+        transition: transform 0.5s ease;
+    }
+
+    .slide1 {
+        flex: 0 0 auto;
+        width: calc(100% / 6);
+        /* Adjust the width based on the number of visible items */
+        padding: 20px;
+        text-align: center;
+    }
+
+    .prev1 {
+        left: 0;
+    }
+
+    .next1 {
+        right: 0;
+    }
+
+    button.prev1 {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    button.next1 {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .carousel2 {
+        display: flex;
+        transition: transform 0.5s ease;
+    }
+
+    .slide2 {
+        flex: 0 0 auto;
+        width: calc(100% / 7);
+        /* Adjust the width based on the number of visible items */
+        padding: 20px;
+        text-align: center;
+    }
+
+    .prev2 {
+        left: 0;
+    }
+
+    .next2 {
+        right: 0;
+    }
+
+    button.prev2 {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    button.next2 {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    #mobile {
+        display: none;
+    }
+
+    #outer_desktop {
+        display: block;
+    }
+
+    /* Media query for smaller screens */
+    @media (max-width: 790px) {
+
+        html {
+            overflow-x: hidden;
+        }
+
+        #mobile {
+            display: block;
+        }
+
+        #outer_desktop {
+            display: none;
+        }
+
+        .slide1 {
+            flex: 0 0 auto;
+            width: calc(100% / 3);
+            /* Adjust the width based on the number of visible items */
+            padding: 20px;
+            text-align: center;
+            font-size: small;
+        }
+
+        .slide2 {
+            flex: 0 0 auto;
+            width: calc(100% / 2);
+            /* Adjust the width based on the number of visible items */
+            padding: 20px;
+            text-align: center;
+            font-size: small;
+        }
+
+        .websitewla {
+            font-size: x-small;
+        }
+
+        .aboutwala {
+            font-size: x-small;
+        }
+
+        .get_on_google {
+            display: none;
+        }
+
+        .Firsuuiut {
+            width: 75vw;
+        }
+
+        .slidergridwala {
+            display: none;
+        }
+
+        .items_hai {
+            width: 75vw;
+        }
+
+        .thirdhai {
+            width: 70vw;
+        }
+
+        #bottom_navbar {
+            display: block;
+        }
+
+        .Rokau2>p:first-child {
+            color: #1b2437;
+            max-width: 175px;
+            font-size: x-small;
+            line-height: 22px;
+            font-weight: 500;
+            margin-left: 20px;
+            text-align: start;
+        }
+
+        .ROkau3rdhhai>p {
+
+            font-size: small;
+            text-align: center;
+
+        }
+
+        .image_wlah {
+            display: none;
+        }
+
+        .hamburger-menu {
+            display: block;
+            /* margin: 22em; */
+            float: right;
+            margin-left: auto;
+            margin-right: 2rem;
+            /* justify-content: flex-end; */
+        }
+
+        .t_elements {
+            display: none;
+            /* Hide navigation links by default on smaller screens */
+        }
+
+        .t_button {
+            display: none;
+            /* Hide navigation links by default on smaller screens */
+        }
+
+        .t_button {
+            display: none;
+            /* Hide navigation links by default on smaller screens */
+        }
+
+
+        .t_elements.active {
+            display: flex;
+            /* Show navigation links when hamburger menu is clicked */
+            flex-direction: column;
+            background-color: #fff;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            right: 0;
+            z-index: 1;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .t_elements.active a {
+            margin: 10px 0;
+        }
+
+        /* body{
+    font-size: x-small;
+  } */
+        #main {
+            width: 100vw;
+            margin: 0px auto;
+        }
+
+        #jobCardsContainer {
+            width: 67vw;
+        }
+
+        #filterContainer {
+            width: 17vw;
+            margin: 0 0;
+        }
+
+        #filterContainer>div {
+            width: 141px;
+        }
+
+        #featured {
+            display: none;
+        }
+
+        #searchalljobs {
+            margin-top: 10px;
+            width: 50vw
+        }
+
+        .card {
+            width: 54vw;
+        }
+
+        #chatsicon-mob {
+            display: block;
+        }
+
+        #chatsicon-desk {
+            display: none;
+        }
+
+        #suggestionhaiya {
+            width: 90vw;
+        }
+
+        #skills {
+            width: 53vw;
+            font-size: small;
+        }
+
+        #pehla {
+            width: 53vw;
+            font-size: small;
+        }
+
+        #qsbSubmit {
+            width: 25vw;
+            font-size: medium;
+        }
+
+        .fourthh {
+            width: 25vw;
+            font-size: medium;
+
+        }
+
+        #Discovryy,
+        #growcarrier {
+            display: none;
+        }
+
+
+    }
+</style>
+
+<body>
+
+    <!-- <a href="/servieces.html/servieces.html"></a> -->
+    <nav class="navbar" id="bottom_navbar">
+        <ul>
+            <li><a href="/"><i class="fa fa-home" style="font-size:24px"></i> <br>Home</a></li>
+            <li><a href="/about-us"><i class="fa fa-user" style="font-size:24px"></i> <br>About</a></li>
+            <li><a href="/contact-us"><i class="fa fa-phone" style="font-size:24px"></i> <br>Contact</a></li>
+            <li><a href="/login"><i class="fa fa-sign-in" style="font-size:24px"></i> <br>Login</a></li>
+        </ul>
+    </nav>
+    <div class="navibarr">
+        <div class="t_logo"><a href="/"><img src="static/images/final_logo.png" alt="Error" id="mainpagepaileja"
+                    height="60" width="230"></a></div>
+        <div class="t_elements">
+            <ul class="t_elements_container">
+                <li class="t_elements_li">
+                    <a href="/" class="t_anchor_tag t_h3_J">
+                        <p style="margin-right: 20px;font-size: 14px;text-decoration: none;" id="t_h3_J"><b>Home</b></p>
+                    </a>
+                </li>
+                <li class="t_elements_li">
+                    <a href="/about-us" class="t_anchor_tag t_h3_J">
+                        <h3 style="margin-right: 20px;font-size: 14px;text-decoration: none;" id="t_h3_J">About us</h3>
+                    </a>
+                </li>
+                <li class="t_elements_li">
+                    <a href="/contact-us" class="t_anchor_tag t_h3_J">
+                        <p style="margin-right: 20px;font-size: 14px;text-decoration: none;" id="t_h3_J">Contact us</p>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+        <div class="hamburger-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <div class="t_button">
+            <a href="/billbot"><button class="t_button_3" style="font-family: 'Varela Round', sans-serif;">AI Resume
+                    Builder</button></a>
+            <a href="/login"><button class="t_button_2"
+                    style="font-family: 'Varela Round', sans-serif;">Login</button></a>
+        </div>
+        <div class="t_foremployers_container">
+
+        </div>
+    </div>
+    <div id="mobile">
+      <div class="outer_desk">
+        <h2>What A2ZRecruit Offers?</h2>
+        <div class="carousel-container">
+            <div class="carousel1">
+                <div class="slide1">
+                    <div class="ROkau">
+                        <img src="https://static.naukimg.com/s/0/0/i/trending-naukri/remote.svg" alt="">
+                        <p>Smart Chatbot</p>
+                        <!-- <p>5.4K+ jobs</p> -->
+                    </div>
+                </div>
+                <div class="slide1">
+                    <div class="ROkau">
+                        <img src="https://static.naukimg.com/s/0/0/i/trending-naukri/mnc.svg" alt="">
+                        <p>AI Resume Builder</p>
+                        <!-- <p>60.4K+jobs</p> -->
+                    </div>
+                </div>
+                <div class="slide1">
+                    <div class="ROkau">
+                        <img src="https://static.naukimg.com/s/0/0/i/trending-naukri/finance.svg" alt="">
+                        <p>AI Job Filters</p>
+                        <!-- <p>4.5K+jobs</p> -->
+                    </div>
+                </div>
+                <div class="slide1">
+                    <div class="ROkau">
+                        <img src="https://static.naukimg.com/s/0/0/i/trending-naukri/engineering.svg" alt="">
+                        <p>Curated Jobs</p>
+                        <!-- <p>2.2K+jobs</p> -->
+                    </div>
+                </div>
+                <div class="slide1">
+                    <div class="ROkau">
+                        <img src="https://static.naukimg.com/s/0/0/i/trending-naukri/analytics.svg" alt="">
+                        <p>Recruitment Support</p>
+                        <!-- <p>9.5K+jobs</p> -->
+                    </div>
+                </div>
+                <div class="slide1">
+                    <div class="ROkau">
+                        <img src="https://static.naukimg.com/s/0/0/i/trending-naukri/marketing.svg" alt="">
+                        <p>Smooth Onboarding</p>
+                        <!-- <p>2.3K+jobs</p> -->
+                    </div>
+                </div>
+                <div class="slide1">
+                    <div class="ROkau">
+                        <img src="https://static.naukimg.com/s/0/0/i/trending-naukri/fortune-500.svg" alt="">
+                        <p>One Click Apply</p>
+                        <!-- <p>16K+jobs</p> -->
+                    </div>
+                </div>
+                <div class="slide1">
+                    <div class="ROkau">
+                        <img src="https://static.naukimg.com/s/0/0/i/trending-naukri/data-science.svg" alt="">
+                        <p>Courses</p>
+                        <!-- <p>2.2K+jobs</p> -->
+                    </div>
+                </div>
+                <div class="slide1">
+                    <div class="ROkau">
+                        <img src="https://static.naukimg.com/s/0/0/i/trending-naukri/temporary-wfh.svg" alt="">
+                        <p>Guarenteed Jobs</p>
+                        <!-- <p>9.3K+jobs</p> -->
+                    </div>
+                </div>
+            </div>
+            <button class="prev1">&#10094;</button>
+            <button class="next1">&#10095;</button>
+        </div>
+        <div id="mainhi">
+            <h2 style="margin: 5px;">Land your dream job with A2ZRecruit</h2>
+            <p class="jaab">3 lakh+jobs for you to explore</p>
+        </div>
+        <form action="/searchJobs" style="all:unset">
+            <div id="suggestionhaiya">
+                    <img src="https://static.naukimg.com/s/7/103/i/search.9ec0e1ac.svg" class="searchIc" />
+                    <div id="pehla">
+                        <input class="suggestor-input" type="text" placeholder="Enter skills / designations / companies"
+                            tabindex="0" value="" id="skills" name="search" />
+                    </div>
+
+                    <div class="fourthh">
+                        <button id="qsbSubmit" type="submit" onclick="return checkSubmit()"
+                            style="background-color: #0548aa;">Search</button>
+                    </div>
+                </div>
+            </form>
+      </div>
+      <br>
+      <div class="third_slider">
+        <h2 style="margin: 10px;">Featured companies actively hiring</h2>
+        <div class="carousel-container" style="margin-bottom: 5em;">
+            <div class="carousel2">
+                <div class="slide2">
+                    <div class="ROkau3rdhhai">
+                        <div class="photohia">
+                            <img src="https://img.naukimg.com/logo_images/groups/v2/4264.gif" alt="">
+                        </div>
+                        <br>
+                        <p>WNS Global Services</p>
+                        <p>3.7|6.7K+reviews</p>
+                        <p>Leading business process
+                            management company</p>
+                            <a href="/signup" style="cursor: pointer;"><button class="jobsbtn">View jobs</button> </a>
+                    </div>
+                </div>
+                <div class="slide2">
+                    <div class="ROkau3rdhhai">
+                        <div class="photohia">
+                            <img src="https://img.naukimg.com/logo_images/groups/v2/2436002.gif" alt="">
+                        </div>
+
+                        <br>
+                        <p>Xoriant</p>
+
+                        <p>4.4|936reviews</p>
+                        <p>Software development & technologu services firm.</p>
+                        <a href="/signup" style="cursor: pointer;"><button class="jobsbtn">View jobs</button> </a>
+
+                    </div>
+                </div>
+                <div class="slide2">
+                    <div class="ROkau3rdhhai">
+                        <div class="photohia">
+                            <img src="https://img.naukimg.com/logo_images/groups/v2/1288.gif" alt="">
+                        </div>
+                        <br>
+                        <p>Capgemini</p>
+                        <p>3.9|22.7K+reviews</p>
+                        <p>Global leader in technology services</p>
+                        <a href="/signup" style="cursor: pointer;"><button class="jobsbtn">View jobs</button> </a>
+                    </div>
+                </div>
+                <div class="slide2">
+                    <div class="ROkau3rdhhai">
+                        <div class="photohia">
+                            <img src="https://img.naukimg.com/logo_images/groups/v2/21746.gif" alt="">
+                        </div>
+                        <br>
+                        <p>FIS</p>
+                        <p>4.1|3.4K+reviews</p>
+                        <p>FIS is hiring 3 to 10yrs exp.in C++ & Mumps developer</p>
+                        <a href="/signup" style="cursor: pointer;"><button class="jobsbtn">View jobs</button> </a>
+                    </div>
+                </div>
+                <div class="slide2">
+                    <div class="ROkau3rdhhai">
+                        <div class="photohia">
+                            <img src="https://img.naukimg.com/logo_images/groups/v2/3835862.gif" alt="">
+                        </div>
+                        <br>
+                        <p>Persistent</p>
+                        <p>4.2|1.5LK+reviews</p>
+                        <p>Trusted global solutions company</p>
+                        <a href="/signup" style="cursor: pointer;"><button class="jobsbtn">View jobs</button> </a>
+                    </div>
+                </div>
+                <div class="slide2">
+                    <div class="ROkau3rdhhai">
+                        <div class="photohia">
+                            <img src="https://img.naukimg.com/logo_images/groups/v2/44512.gif" alt="">
+                        </div>
+                        <br>
+                        <p>ICICI Bank</p>
+                        <p>4.0|33.4K+reviews</p>
+                        <p>Leading private sector bank in India</p>
+                        <a href="/signup" style="cursor: pointer;"><button class="jobsbtn">View jobs</button> </a>
+                    </div>
+                </div>
+                <div class="slide2">
+                    <div class="ROkau3rdhhai">
+                        <div class="photohia">
+                            <img src="https://img.naukimg.com/logo_images/groups/v2/4582763.gif" alt="">
+                        </div>
+                        <br>
+                        <p>Biz2Credit</p>
+                        <p>4.3|165 reviews</p>
+                        <p>Leading the #FinTech Revolution</p>
+                        <a href="/signup" style="cursor: pointer;"><button class="jobsbtn">View jobs</button> </a>
+                    </div>
+                </div>
+                <div class="slide2">
+                    <div class="ROkau3rdhhai">
+                        <div class="photohia">
+                            <img src="https://img.naukimg.com/logo_images/groups/v2/2483944.gif" alt="">
+                        </div>
+                        <br>
+                        <p>R1 RCM</p>
+                        <p>4.0|1.5K+reviews</p>
+                        <p>Leading provider of tech driven solutions</p>
+                        <a href="/signup" style="cursor: pointer;"><button class="jobsbtn">View jobs</button> </a>
+                    </div>
+                </div>
+                <div class="silde2">
+                    <div class="ROkau3rdhhai">
+                        <div class="photohia">
+                            <img src="https://img.naukimg.com/logo_images/groups/v2/1574056.gif" alt="">
+                        </div>
+                        <br>
+                        <p>Applied Materials</p>
+                        <p>4.3|198 reviews</p>
+                        <p>Leading in materials engineering solutions</p>
+                        <a href="/signup" style="cursor: pointer;"><button class="jobsbtn">View jobs</button> </a>
+                    </div>
+                </div>
+                <div class="silde2">
+                    <div class="ROkau3rdhhai">
+                        <div class="photohia">
+                            <img src="https://img.naukimg.com/logo_images/groups/v2/42932.gif" alt="">
+                        </div>
+                        <br>
+                        <p>Genpact</p>
+                        <p>4.0|20K+reviews</p>
+                        <p>Global professional services firm</p>
+                        <a href="/signup" style="cursor: pointer;"><button class="jobsbtn">View jobs</button> </a>
+                    </div>
+                </div>
+            </div>
+            <button class="prev2">&#10094;</button>
+            <button class="next2">&#10095;</button>
+        </div>
+    </div>
+    </div>
+    <div id="outer_desktop">
+    <div id="desktop">
+        <h2>What A2ZRecruit Offers?</h2>
+        <div class="Firsuuiut slider">
+            <div class="ROkau">
+                <img src="https://static.naukimg.com/s/0/0/i/trending-naukri/remote.svg" alt="">
+                <p>Smart Chatbot</p>
+                <!-- <p>5.4K+ jobs</p> -->
+            </div>
+            <div class="ROkau">
+                <img src="https://static.naukimg.com/s/0/0/i/trending-naukri/mnc.svg" alt="">
+                <p>AI Resume Builder</p>
+                <!-- <p>60.4K+jobs</p> -->
+            </div>
+            <div class="ROkau">
+                <img src="https://static.naukimg.com/s/0/0/i/trending-naukri/finance.svg" alt="">
+                <p>AI Job Filters</p>
+                <!-- <p>4.5K+jobs</p> -->
+            </div>
+            <div class="ROkau">
+                <img src="https://static.naukimg.com/s/0/0/i/trending-naukri/engineering.svg" alt="">
+                <p>Curated Jobs</p>
+                <!-- <p>2.2K+jobs</p> -->
+            </div>
+            <div class="ROkau">
+                <img src="https://static.naukimg.com/s/0/0/i/trending-naukri/analytics.svg" alt="">
+                <p>Recruitment Support</p>
+                <!-- <p>9.5K+jobs</p> -->
+            </div>
+            <div class="ROkau">
+                <img src="https://static.naukimg.com/s/0/0/i/trending-naukri/marketing.svg" alt="">
+                <p>Smooth Onboarding</p>
+                <!-- <p>2.3K+jobs</p> -->
+            </div>
+            <div class="ROkau">
+                <img src="https://static.naukimg.com/s/0/0/i/trending-naukri/fortune-500.svg" alt="">
+                <p>One Click Apply</p>
+                <!-- <p>16K+jobs</p> -->
+            </div>
+            <div class="ROkau">
+                <img src="https://static.naukimg.com/s/0/0/i/trending-naukri/data-science.svg" alt="">
+                <p>Courses</p>
+                <!-- <p>2.2K+jobs</p> -->
+            </div>
+            <div class="ROkau">
+                <img src="https://static.naukimg.com/s/0/0/i/trending-naukri/temporary-wfh.svg" alt="">
+                <p>Guarenteed Jobs</p>
+                <!-- <p>9.3K+jobs</p> -->
+            </div>
+        </div>
+
+        <div id="mainhi">
+            <h1>Land your dream job with A2ZRecruit</h1>
+            <p class="jaab">3 lakh+jobs for you to explore</p>
+        </div>
+
+        <form action="/searchJobs" style="all:unset">
+            <div id="suggestionhaiya">
+                <img src="https://static.naukimg.com/s/7/103/i/search.9ec0e1ac.svg" class="searchIc" />
+                <div id="pehla">
+                    <input class="suggestor-input" type="text" placeholder="Enter skills / designations / companies"
+                        tabindex="0" value="" id="skills" name="search" />
+                </div>
+
+                <div class="fourthh">
+                    <button id="qsbSubmit" type="submit" onclick="return checkSubmit()"
+                        style="background-color: #0548aa;">Search</button>
+                </div>
+        </form>
+        </div>
+        <br>
+        <div class="second_slider">
+            <h2>Explore top companies hiring now</h2>
+           <div class="items_hai">
+                  <div class="Rokau2">
+                      <p>MNCs ></p>
+                      <p>1.2K+ are actively hiring</p>
+                      <div class="image_wlah">
+                          <div>
+                              <img src="https://img.naukimg.com/logo_images/groups/v1/36136.gif" alt="">
+                          </div>
+                          <div>
+                              <img src="https://img.naukimg.com/logo_images/groups/v1/2114.gif" alt="">
+                          </div>
+                          <div>
+                              <img src="https://img.naukimg.com/logo_images/groups/v1/1186200.gif" alt="">
+                          </div>
+                          <div>
+                              <img src="https://img.naukimg.com/logo_images/groups/v1/521230.gif" alt="">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="Rokau2">
+                      <p>Fortune 500 ></p>
+                      <p>82 are actively hiring</p>
+                      <div class="image_wlah">
+                          <div>
+                              <img src="https://img.naukimg.com/logo_images/groups/v1/29798.gif" alt="">
+                          </div>
+                          <div>
+                              <img src="https://img.naukimg.com/logo_images/groups/v1/20302.gif" alt="">
+                          </div>
+                          <div>
+                              <img src="https://img.naukimg.com/logo_images/groups/v1/8886.gif" alt="">
+                          </div>
+                          <div>
+                              <img src="https://img.naukimg.com/logo_images/groups/v1/228864.gif" alt="">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="Rokau2">
+                      <p>Unicorns ></p>
+                      <p>84 are actively hiring</p>
+                      <div class="image_wlah">
+                          <div>
+                              <img src="https://img.naukimg.com/logo_images/groups/v1/1205138.gif" alt="">
+                          </div>
+                          <div>
+                              <img src="https://img.naukimg.com/logo_images/groups/v1/2519816.gif" alt="">
+                          </div>
+                          <div>
+                              <img src="https://img.naukimg.com/logo_images/groups/v1/509622.gif" alt="">
+                          </div>
+                          <div>
+                              <img src="https://img.naukimg.com/logo_images/groups/v1/555816.gif" alt="">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="Rokau2">
+                      <p>Startups ></p>
+                      <p>197 are actively hiring</p>
+                      <div class="image_wlah">
+                          <div>
+                              <img src="https://img.naukimg.com/logo_images/groups/v1/1285014.gif" alt="">
+                          </div>
+                          <div>
+                              <img src="https://img.naukimg.com/logo_images/groups/v1/1302864.gif" alt="">
+                          </div>
+                          <div>
+                              <img src="https://img.naukimg.com/logo_images/groups/v1/2444130.gif" alt="">
+                          </div>
+                          <div>
+                              <img src="https://img.naukimg.com/logo_images/groups/v1/1194340.gif" alt="">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="Rokau2">
+                      <p>B2C ></p>
+                      <p>893 are actively hiring</p>
+                      <div class="image_wlah">
+                          <div>
+                              <img src="https://img.naukimg.com/logo_images/groups/v1/276124.gif" alt="">
+                          </div>
+                          <div>
+                              <img src="https://img.naukimg.com/logo_images/groups/v1/2519816.gif" alt="">
+                          </div>
+                          <div>
+                              <img src="https://img.naukimg.com/logo_images/groups/v1/869714.gif" alt="">
+                          </div>
+                          <div>
+                              <img src="https://img.naukimg.com/logo_images/groups/v1/1422.gif" alt="">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="Rokau2">
+                      <p>Internet ></p>
+                      <p>126 are actively hiring</p>
+                      <div class="image_wlah">
+                          <div>
+                              <img src="https://img.naukimg.com/logo_images/groups/v1/1194340.gif" alt="">
+                          </div>
+                          <div>
+                              <img src="https://img.naukimg.com/logo_images/groups/v1/1605088.gif" alt="">
+                          </div>
+                          <div>
+                              <img src="https://img.naukimg.com/logo_images/groups/v1/1205138.gif" alt="">
+                          </div>
+                          <div>
+                              <img src="https://img.naukimg.com/logo_images/groups/v1/558162.gif" alt="">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="Rokau2">
+                      <p>Product ></p>
+                      <p>600 are actively hiring</p>
+                      <div class="image_wlah">
+                          <div>
+                              <img src="https://img.naukimg.com/logo_images/groups/v1/4614807.gif" alt="">
+                          </div>
+                          <div>
+                              <img src="https://img.naukimg.com/logo_images/groups/v1/44664.gif" alt="">
+                          </div>
+                          <div>
+                              <img src="https://img.naukimg.com/logo_images/groups/v1/36136.gif" alt="">
+                          </div>
+                          <div>
+                              <img src="https://img.naukimg.com/logo_images/groups/v1/4611495.gif" alt="">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="Rokau2">
+                      <p>Edtech ></p>
+                      <p>143 are actively hiring</p>
+                      <div class="image_wlah">
+                          <div>
+                              <img src="https://img.naukimg.com/logo_images/groups/v1/960842.gif" alt="">
+                          </div>
+                          <div>
+                              <img src="https://img.naukimg.com/logo_images/groups/v1/4614807.gif" alt="">
+                          </div>
+                          <div>
+                              <img src="https://img.naukimg.com/logo_images/groups/v1/4638851.gif" alt="">
+                          </div>
+                          <div>
+                              <img src="https://img.naukimg.com/logo_images/groups/v1/3204490.gif" alt="">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="Rokau2">
+                      <p>Fintech ></p>
+                      <p>95 are actively hiring</p>
+                      <div class="image_wlah">
+                          <div>
+                              <img src="https://img.naukimg.com/logo_images/groups/v1/4618569.gif" alt="">
+                          </div>
+                          <div>
+                              <img src="https://img.naukimg.com/logo_images/groups/v1/3714874.gif" alt="">
+                          </div>
+                          <div>
+                              <img src="https://img.naukimg.com/logo_images/groups/v1/4576817.gif" alt="">
+                          </div>
+                          <div>
+                              <img src="https://img.naukimg.com/logo_images/groups/v1/148890.gif" alt="">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="Rokau2">
+                      <p>Healthcare ></p>
+                      <p>115 are actively hiring</p>
+                      <div class="image_wlah">
+                          <div>
+                              <img src="https://img.naukimg.com/logo_images/groups/v1/241236.gif" alt="">
+                          </div>
+                          <div>
+                              <img src="https://img.naukimg.com/logo_images/groups/v1/1253476.gif" alt="">
+                          </div>
+                          <div>
+                              <img src="https://img.naukimg.com/logo_images/groups/v1/3248522.gif" alt="">
+                          </div>
+                          <div>
+                              <img src="https://img.naukimg.com/logo_images/groups/v1/434716.gif" alt="">
+                          </div>
+                      </div>
+                  </div>
+  
+                  <div class="Rokau2">
+                      <p>FMCG & Retail ></p>
+                      <p>31 are actively hiring</p>
+                      <div class="image_wlah">
+                          <div>
+                              <img src="https://img.naukimg.com/logo_images/groups/v1/1293920.gif" alt="">
+                          </div>
+                          <div>
+                              <img src="https://img.naukimg.com/logo_images/groups/v1/289380.gif" alt="">
+                          </div>
+                          <div>
+                              <img src="https://img.naukimg.com/logo_images/groups/v1/3867866.gif" alt="">
+                          </div>
+                          <div>
+                              <img src="https://img.naukimg.com/logo_images/groups/v1/297496.gif" alt="">
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="third_slider">
+              <h2>Featured companies actively hiring</h2>
+  
+              <div class="thirdhai slider">
+                  <div class="ROkau3rdhhai">
+                      <div class="photohia">
+                          <img src="https://img.naukimg.com/logo_images/groups/v2/4264.gif" alt="">
+                      </div>
+                      <p>WNS Global Services</p>
+                      <p>3.7|6.7K+reviews</p>
+                      <p>Leading business process
+                          management company</p>
+                      <a href="/signup" style="cursor: pointer;"><button class="jobsbtn">View jobs</button> </a>
+                  </div>
+                  <div class="ROkau3rdhhai">
+                      <div class="photohia">
+                          <img src="https://img.naukimg.com/logo_images/groups/v2/2436002.gif" alt="">
+                      </div>
+  
+                      <p>Xoriant</p>
+                      <p>4.4|936reviews</p>
+                      <p>Software development & technologu services firm.</p>
+                      <a href="/signup" style="cursor: pointer;"><button class="jobsbtn">View jobs</button> </a>
+                  </div>
+                  <div class="ROkau3rdhhai">
+                      <div class="photohia">
+                          <img src="https://img.naukimg.com/logo_images/groups/v2/1288.gif" alt="">
+                      </div>
+  
+                      <p>Capgemini</p>
+                      <p>3.9|22.7K+reviews</p>
+                      <p>Global leader in technology services</p>
+                      <a href="/signup" style="cursor: pointer;"><button class="jobsbtn">View jobs</button> </a>
+                  </div>
+                  <div class="ROkau3rdhhai">
+                      <div class="photohia">
+                          <img src="https://img.naukimg.com/logo_images/groups/v2/21746.gif" alt="">
+                      </div>
+  
+                      <p>FIS</p>
+                      <p>4.1|3.4K+reviews</p>
+                      <p>FIS is hiring 3 to 10yrs exp.in C++ & Mumps developer</p>
+                      <a href="/signup" style="cursor: pointer;"><button class="jobsbtn">View jobs</button> </a>
+                  </div>
+                  <div class="ROkau3rdhhai">
+                      <div class="photohia">
+                          <img src="https://img.naukimg.com/logo_images/groups/v2/3835862.gif" alt="">
+                      </div>
+  
+                      <p>Persistent</p>
+                      <p>4.2|1.5LK+reviews</p>
+                      <p>Trusted global solutions company</p>
+                      <a href="/signup" style="cursor: pointer;"><button class="jobsbtn">View jobs</button> </a>
+                  </div>
+                  <div class="ROkau3rdhhai">
+                      <div class="photohia">
+                          <img src="https://img.naukimg.com/logo_images/groups/v2/44512.gif" alt="">
+                      </div>
+  
+                      <p>ICICI Bank</p>
+                      <p>4.0|33.4K+reviews</p>
+                      <p>Leading private sector bank in India</p>
+                      <a href="/signup" style="cursor: pointer;"><button class="jobsbtn">View jobs</button> </a>
+                  </div>
+                  <div class="ROkau3rdhhai">
+                      <div class="photohia">
+                          <img src="https://img.naukimg.com/logo_images/groups/v2/4582763.gif" alt="">
+                      </div>
+  
+                      <p>Biz2Credit</p>
+                      <p>4.3|165 reviews</p>
+                      <p>Leading the #FinTech Revolution</p>
+                      <a href="/signup" style="cursor: pointer;"><button class="jobsbtn">View jobs</button> </a>
+                  </div>
+                  <div class="ROkau3rdhhai">
+                      <div class="photohia">
+                          <img src="https://img.naukimg.com/logo_images/groups/v2/2483944.gif" alt="">
+                      </div>
+  
+                      <p>R1 RCM</p>
+                      <p>4.0|1.5K+reviews</p>
+                      <p>Leading provider of tech driven solutions</p>
+                      <a href="/signup" style="cursor: pointer;"><button class="jobsbtn">View jobs</button> </a>
+                  </div>
+                  <div class="ROkau3rdhhai">
+                      <div class="photohia">
+                          <img src="https://img.naukimg.com/logo_images/groups/v2/1574056.gif" alt="">
+                      </div>
+  
+                      <p>Applied Materials</p>
+                      <p>4.3|198 reviews</p>
+                      <p>Leading in materials engineering solutions</p>
+                      <a href="/signup" style="cursor: pointer;"><button class="jobsbtn">View jobs</button> </a>
+                  </div>
+                  <div class="ROkau3rdhhai">
+                      <div class="photohia">
+                          <img src="https://img.naukimg.com/logo_images/groups/v2/42932.gif" alt="">
+                      </div>
+  
+                      <p>Genpact</p>
+                      <p>4.0|20K+reviews</p>
+                      <p>Global professional services firm</p>
+                      <a href="/signup" style="cursor: pointer;"><button class="jobsbtn">View jobs</button> </a>
+                  </div>
+                  <div class="ROkau3rdhhai">
+                      <div class="photohia">
+                          <img src="https://img.naukimg.com/logo_images/groups/v2/4577755.gif" alt="">
+                      </div>
+  
+                      <p>Accolite Digital</p>
+                      <p>4.0|280 reviews</p>
+                      <p>Digital transformation services provider</p>
+                      <a href="/signup" style="cursor: pointer;"><button class="jobsbtn">View jobs</button> </a>
+                  </div>
+                  <div class="ROkau3rdhhai">
+                      <div class="photohia">
+                          <img src="https://img.naukimg.com/logo_images/groups/v2/1574056.gif" alt="">
+                      </div>
+  
+                      <p>Applied Materials</p>
+                      <p>4.3|198 reviews</p>
+                      <p>Leading in materials engineering solutions</p>
+                      <a href="/signup" style="cursor: pointer;"><button class="jobsbtn">View jobs</button> </a>
+                  </div>
+                  <div class="ROkau3rdhhai">
+                      <div class="photohia">
+                          <img src="https://img.naukimg.com/logo_images/groups/v2/2483944.gif" alt="">
+                      </div>
+  
+                      <p>R1 RCM</p>
+                      <p>4.0|1.5K+reviews</p>
+                      <p>Leading provider of tech driven solutions</p>
+                      <a href="/signup" style="cursor: pointer;"><button class="jobsbtn">View jobs</button> </a>
+                  </div>
+                  <div class="ROkau3rdhhai">
+                      <div class="photohia">
+                          <img src="https://img.naukimg.com/logo_images/groups/v2/42932.gif" alt="">
+                      </div>
+  
+                      <p>Genpact</p>
+                      <p>4.0|20K+reviews</p>
+                      <p>Global professional services firm</p>
+                      <a href="/signup" style="cursor: pointer;"><button class="jobsbtn">View jobs</button> </a>
+                  </div>
+                  <div class="ROkau3rdhhai">
+                      <div class="photohia">
+                          <img src="https://img.naukimg.com/logo_images/groups/v2/4654342.gif" alt="">
+                      </div>
+  
+                      <p>Cbts</p>
+                      <p>4.4| 30 reviews</p>
+                      <p>Leading technology provider</p>
+                      <a href="/signup" style="cursor: pointer;"><button class="jobsbtn">View jobs</button> </a>
+                  </div>
+              </div>
+          </div>
+          <div id="Discovryy">
+            <div id="pinkyyy">
+                <img src="https://static.naukimg.com/s/0/0/i/role-collection.png" alt="">
+                <p>Discover jobs across popular roles</p>
+                <p>Select a role and we'll show you relevant jobs for it</p>
+            </div>
+
+
+
+
+
+            <div class="gridwlaslider">
+
+                <div class="rokau4">
+                    <div class="rokau4andr">
+                        <p>Product Manager</p>
+                        <p>2.8K+Jobs ></p>
+                    </div>
+                    <div class="rokau4andr">
+                        <p>Research Analyst</p>
+                        <p>286 Jobs ></p>
+                    </div>
+                    <div class="rokau4andr">
+                        <p>Functional Consultant</p>
+                        <p>3.7K+Jobs ></p>
+                    </div>
+
+                </div>
+                <div class="rokau4">
+                    <div class="rokau4andr">
+                        <p>UI/ UX Designer</p>
+                        <p>867 Jobs ></p>
+                    </div>
+                    <div class="rokau4andr">
+                        <p>Branch Manager</p>
+                        <p>858 Jobs ></p>
+                    </div>
+                    <div class="rokau4andr">
+                        <p>Chartered Accoun..</p>
+                        <p>1.5K+Jobs ></p>
+                    </div>
+
+                </div>
+                <div class="rokau4">
+                    <div class="rokau4andr">
+                        <p>Full Stack Developer</p>
+                        <p>24.2K+Jobs ></p>
+                    </div>
+                    <div class="rokau4andr">
+                        <p>Front End Developer</p>
+                        <p>3K+Jobs ></p>
+                    </div>
+                    <div class="rokau4andr">
+                        <p>Engineering Manager</p>
+                        <p>1.5K+Jobs ></p>
+                    </div>
+
+                </div>
+
+
+                <div class="rokau4">
+                    <div class="rokau4andr">
+                        <p>App Developer</p>
+                        <p>2.2K+Jobs</p>
+                    </div>
+                    <div class="rokau4andr">
+                        <p>DevOps Engineer</p>
+                        <p>1.7K+Jobs ></p>
+                    </div>
+                    <div class="rokau4andr">
+                        <p>Technical Lead</p>
+                        <p>14.4K+Jobs</p>
+                    </div>
+
+                </div>
+                <div class="rokau4">
+                    <div class="rokau4andr">
+                        <p>Automa.Test Engi..</p>
+                        <p>2.1K+Jobs</p>
+                    </div>
+                    <div class="rokau4andr">
+                        <p>Technical Architect</p>
+                        <p>8.4K+Jobs</p>
+                    </div>
+                    <div class="rokau4andr">
+                        <p>Data Scientist</p>
+                        <p>794 Jobs</p>
+                    </div>
+
+                </div>
+                <div class="rokau4">
+                    <div class="rokau4andr">
+                        <p>Cyber Security</p>
+                        <p>430 Jobs</p>
+                    </div>
+                    <div class="rokau4andr">
+                        <p>Business Analyst</p>
+                        <p>5.6K+Jobs</p>
+                    </div>
+                    <div class="rokau4andr">
+                        <p>Program Manager -T..</p>
+                        <p>881Jobs></p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div id="righpinkk"></div>
+        </div>
+        <div class="slidergridwala">
+            <div class="Rokaugridwala">
+                <div class="twoboxes">
+                    <div class="chotaimage">
+                        <img src="https://img.naukimg.com/logo_images/groups/v1/6403387.gif" alt="">
+                    </div>
+                    <h4>NIELSENIQ INDIA ></h4>
+                    <p>4.1| 155 reviews</p>
+                    </p>
+                    <div class="chotapara">
+                        IT Services & Consulting
+                    </div>
+                </div>
+                <div class="twoboxes">
+                    <div class="chotaimage">
+                        <img src="https://img.naukimg.com/logo_images/groups/v1/993452.gif" alt="">
+                    </div>
+                    <h4>Brillio ></h4>
+                    <p>3.7| 391 reviews</p>
+                    <div class="chotapara">
+                        Foreign MNC
+                    </div>
+                </div>
+            </div>
+            <div class="Rokaugridwala">
+                <div class="twoboxes">
+                    <div class="chotaimage">
+                        <img src="https://img.naukimg.com/logo_images/groups/v1/1402790.gif" alt="">
+                    </div>
+                    <h4>CGI ></h4>
+                    <p>4.2| 1.9K+reviews</p>
+                    <div class="chotapara">
+                        Forbes Global 2000
+                    </div>
+                </div>
+                <div class="twoboxes">
+                    <div class="chotaimage">
+                        <img src="https://img.naukimg.com/logo_images/groups/v1/36368.gif" alt="">
+                    </div>
+                    <h4>Merino Group ></h4>
+                    <p>3.8| 573 reviews</p>
+                    <div class="chotapara">
+                        Furniture & Furnishing
+                    </div>
+                </div>
+            </div>
+            <div class="Rokaugridwala">
+                <div class="twoboxes">
+                    <div class="chotaimage">
+                        <img src="https://img.naukimg.com/logo_images/groups/v1/3889408.gif" alt="">
+                    </div>
+                    <h4>Chemplast Sanmar ></h4>
+                    <p>3.9|254 reviews</p>
+                    <div class="chotapara">
+                        Manufacturing
+                    </div>
+                </div>
+                <div class="twoboxes">
+                    <div class="chotaimage">
+                        <img src="https://img.naukimg.com/logo_images/groups/v1/4597455.gif" alt="">
+                    </div>
+                    <h4>Gadgeon Smart S..></h4>
+                    <p>4.4| 22 reviews</p>
+                    <div class="chotapara">
+                        Foreign MNC
+                    </div>
+                </div>
+            </div>
+            <div class="Rokaugridwala">
+                <div class="twoboxes">
+                    <div class="chotaimage">
+                        <img src="https://img.naukimg.com/logo_images/groups/v1/4770599.gif" alt="">
+                    </div>
+                    <h4>Whirlpool ></h4>
+                    <p>4.3| 1.2K+reviews</p>
+                    <div class="chotapara">
+                        Consumer Electronics & Appl..
+                    </div>
+                </div>
+                <div class="twoboxes">
+                    <div class="chotaimage">
+                        <img src="https://img.naukimg.com/logo_images/groups/v1/27458.gif" alt="">
+                    </div>
+                    <h4>Bureau Veritas ></h4>
+                    <p>4.0| 1.1K+reviews</p>
+                    <div class="chotapara">
+                        Consumer goods
+                    </div>
+                </div>
+            </div>
+            <div class="Rokaugridwala">
+                <div class="twoboxes">
+                    <div class="chotaimage">
+                        <img src="https://img.naukimg.com/logo_images/groups/v1/246024.gif" alt="">
+                    </div>
+                    <h4>Tata Technologies ></h4>
+                    <p>3.5| 1.3K+reviews</p>
+                    <div class="chotapara">
+                        IT Services & Consulting
+                    </div>
+                </div>
+                <div class="twoboxes">
+                    <div class="chotaimage">
+                        <img src="https://img.naukimg.com/logo_images/groups/v1/4622367.gif" alt="">
+                    </div>
+                    <h4>Rain Industries</h4>
+                    <p>4.0| 48 reviews</p>
+                    <div class="chotapara">
+                        Chemicals
+                    </div>
+                </div>
+            </div>
+            <div class="Rokaugridwala">
+                <div class="twoboxes">
+                    <div class="chotaimage">
+                        <img src="https://img.naukimg.com/logo_images/groups/v1/4682615.gif" alt="">
+                    </div>
+                    <h4>P H Diagonistic Ce..</h4>
+                    <p>3.4| 27 reviews</p>
+                    <div class="chotapara">
+                        Medical Services/Hospital
+                    </div>
+                </div>
+                <div class="twoboxes">
+                    <div class="chotaimage">
+                        <img src="https://img.naukimg.com/logo_images/groups/v1/4622367.gif" alt="">
+                    </div>
+                    <h4>Rain Industries</h4>
+                    <p>4.0| 48 reviews</p>
+                    <div class="chotapara">
+                        Corporate
+                    </div>
+                </div>
+            </div>
+            <div class="Rokaugridwala">
+                <div class="twoboxes">
+                    <div class="chotaimage">
+                        <img src="https://img.naukimg.com/logo_images/groups/v1/4682615.gif" alt="">
+                    </div>
+                    <h4>P H Diagonistic Ce..</h4>
+                    <p>3.4| 27 reviews</p>
+                    <div class="chotapara">
+                        Private
+                    </div>
+                </div>
+                <div class="twoboxes">
+                    <div class="chotaimage">
+                        <img src="https://img.naukimg.com/logo_images/groups/v1/6640601.gif" alt="">
+                    </div>
+                    <h4>Maknet ></h4>
+                    <div class="chotapara">
+                        Internet
+                    </div>
+                </div>
+            </div>
+            <div class="Rokaugridwala">
+                <div class="twoboxes">
+                    <div class="chotaimage">
+                        <img src="https://img.naukimg.com/logo_images/groups/v1/347394.gif" alt="">
+                    </div>
+                    <h4>Apco Infratech</h4>
+                    <p>3.9| 599 reviews</p>
+                    <div class="chotapara">
+                        Engineering & Construction
+                    </div>
+                </div>
+                <div class="twoboxes">
+                    <div class="chotaimage">
+                        <img src="https://img.naukimg.com/logo_images/groups/v1/4656921.gif" alt="">
+                    </div>
+                    <h4>NICE ></h4>
+                    <p>4.0| 255 reviews</p>
+                    <div class="chotapara">
+                        Software Product
+                    </div>
+                </div>
+            </div>
+            <div class="Rokaugridwala">
+                <div class="twoboxes">
+                    <div class="chotaimage">
+                        <img src="https://img.naukimg.com/logo_images/groups/v1/134834.gif" alt="">
+                    </div>
+                    <h4>Synchrony</h4>
+                    <p>4.4|727 reviews</p>
+
+                </div>
+                <div class="twoboxes">
+                    <div class="chotaimage">
+                        <img src="https://img.naukimg.com/logo_images/groups/v1/49980.gif" alt="">
+                    </div>
+                    <h4>Encora ></h4>
+                    <p>4.1|143 reviews</p>
+                    <div class="chotapara">
+                        B2B
+                    </div>
+                </div>
+            </div>
+            <div class="Rokaugridwala">
+                <div class="twoboxes">
+                    <div class="chotaimage">
+                        <img src="https://img.naukimg.com/logo_images/groups/v1/315118.gif" alt="">
+                    </div>
+                    <h4>Datamatics Global..></h4>
+                    <p>3.6|1.6K+reviews</p>
+                    <div class="chotapara">
+                        IT Services & Consulting
+                    </div>
+                </div>
+                <div class="twoboxes">
+                    <div class="chotaimage">
+                        <img src="https://img.naukimg.com/logo_images/groups/v1/233334.gif" alt="">
+                    </div>
+                    <h4>Coforge ></h4>
+                    <p>3.8| 871 reviews</p>
+                    <div class="chotapara">
+                        Indian MNC
+                    </div>
+                </div>
+            </div>
+            <div class="Rokaugridwala">
+                <div class="twoboxes">
+                    <div class="chotaimage">
+                        <img src="https://img.naukimg.com/logo_images/groups/v1/1699912.gif" alt="">
+                    </div>
+                    <h4>SS&C ></h4>
+                    <p>3.8|1K+reviews</p>
+                    <div class="chotapara">
+                        FinTech/Payments
+                    </div>
+                </div>
+                <div class="twoboxes">
+                    <div class="chotaimage">
+                        <img src="https://img.naukimg.com/logo_images/groups/v1/49980.gif" alt="">
+                    </div>
+                    <h4>Encora ></h4>
+                    <p>4.1|143 reviews</p>
+                    <div class="chotapara">
+                        B2B
+                    </div>
+                </div>
+            </div>
+            <div class="Rokaugridwala">
+                <div class="twoboxes">
+                    <div class="chotaimage">
+                        <img src="https://img.naukimg.com/logo_images/groups/v1/315118.gif" alt="">
+                    </div>
+                    <h4>Datamatics Global..></h4>
+                    <p>3.6|1.6K+reviews</p>
+                    <div class="chotapara">
+                        IT Services & Consulting
+                    </div>
+                </div>
+                <div class="twoboxes">
+                    <div class="chotaimage">
+                        <img src="https://img.naukimg.com/logo_images/groups/v1/233334.gif" alt="">
+                    </div>
+                    <h4>Coforge ></h4>
+                    <p>3.8| 871 reviews</p>
+                    <div class="chotapara">
+                        Indian MNC
+                    </div>
+                </div>
+            </div>
+            <div class="Rokaugridwala">
+                <div class="twoboxes">
+                    <div class="chotaimage">
+                        <img src="https://img.naukimg.com/logo_images/groups/v1/1699912.gif" alt="">
+                    </div>
+                    <h4>SS&C ></h4>
+                    <p>3.8|1K+reviews</p>
+                    <div class="chotapara">
+                        FinTech/Payments
+                    </div>
+                </div>
+                <div class="twoboxes">
+                    <div class="chotaimage">
+                        <img src="https://img.naukimg.com/logo_images/groups/v1/4314258.gif" alt="">
+                    </div>
+                    <h4>Edelman Financial..></h4>
+                    <p></p>
+                    <div class="chotapara">
+                        NBFC
+                    </div>
+                </div>
+            </div>
+            <div class="Rokaugridwala">
+                <div class="twoboxes">
+                    <div class="chotaimage">
+                        <img src="https://img.naukimg.com/logo_images/groups/v1/949664.gif" alt="">
+                    </div>
+                    <h4>KPIT ></h4>
+                    <p>3.5|1.7K+reviews</p>
+                    <div class="chotapara">
+                        Software Product
+                    </div>
+                </div>
+                <div class="twoboxes">
+                    <div class="chotaimage">
+                        <img src="https://img.naukimg.com/logo_images/groups/v1/5405750.gif" alt="">
+                    </div>
+                    <h4>EC Council ></h4>
+                    <p>4.1| 22 reviews</p>
+                    <div class="chotapara">
+                        IT Services & Consulting
+                    </div>
+                </div>
+            </div>
+            <div class="Rokaugridwala">
+                <div class="twoboxes">
+                    <div class="chotaimage">
+                        <img src="https://img.naukimg.com/logo_images/groups/v1/548100.gif" alt="">
+                    </div>
+                    <h4>Broadridge</h4>
+                    <p>4.0|737 reviews</p>
+                    <div class="chotapara">
+                        Financial Services
+                    </div>
+                </div>
+                <div class="twoboxes">
+                    <div class="chotaimage">
+                        <img src="https://img.naukimg.com/logo_images/groups/v1/4612691.gif" alt="">
+                    </div>
+                    <h4>MOURI Tech ></h4>
+                    <p>4.0|240 reviews</p>
+                    <div class="chotapara">
+                        Services
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div id="growcarrier">
+            <!-- grow carrier div to be appended her -->
+            <div class="carrerstartimage">
+                <div class="byline">by A2ZRecruit</div>
+                <h4 class="headinghai">
+                    Grow your career through learning
+                </h4>
+                <div class="imagehaicarrerwala">
+                    <img src="https://static.naukimg.com/s/0/0/i/learn-icon.svg" alt="">
+                </div>
+            </div>
+            <div class="carrerslider">
+                <div class="rokaucareerwala">
+                    <p>Data Science</p>
+                    <p>Artificial Intelligence</p>
+                    <p>Learn in demamd AI skills like Deep learning,NLP,Computer vision and more for career growth
+                        across different roles </p>
+                    <div class="twoboxwaladiv">
+                        <div>600 courses</div>
+                        <div>28 providers</div>
+                    </div>
+                </div>
+                <div class="rokaucareerwala">
+                    <p>Cloud Technologies</p>
+                    <p>AWS</p>
+                    <p>Get certified for high demand cloud computing skills for Cloud
+                        Practitioner,Architect,Developer,and Operations roles</p>
+                    <div class="twoboxwaladiv">
+                        <div>800 courses</div>
+                        <div>16 providers</div>
+                    </div>
+                </div>
+                <div class="rokaucareerwala">
+                    <p>Programming</p>
+                    <p>Data Structures & Algorithms</p>
+                    <p>Master DS and Algorithms for entry level engineering roles in product companies and for
+                        programming</p>
+                    <div class="twoboxwaladiv">
+                        <div>800 courses</div>
+                        <div>13 providers</div>
+                    </div>
+                </div>
+                <div class="rokaucareerwala">
+                    <p>Programming</p>
+                    <p>Data Structures & Algorithms</p>
+                    <p>Master DS and Algorithms for entry level engineering roles in product companies and for
+                        programming </p>
+                    <div class="twoboxwaladiv">
+                        <div>800 courses</div>
+                        <div>13 providers</div>
+                    </div>
+                </div>
+                <div class="rokaucareerwala">
+                    <p>Management</p>
+                    <p>Strategy and Leadership</p>
+                    <p>Learn to lead and thrive in a world of increasing uncertainity and volatility- get certified from
+                        top universities</p>
+                    <div class="twoboxwaladiv">
+                        <div>500 courses</div>
+                        <div>70 providers</div>
+                    </div>
+                </div>
+                <div class="rokaucareerwala">
+                    <p>Management</p>
+                    <p>Digital Marketing</p>
+                    <p>A fast growing field with opportunities in PPC, SEO,Email marketing,Marketing analytics,Content
+                        marketing and more</p>
+                    <div class="twoboxwaladiv">
+                        <div>700 courses</div>
+                        <div>25 providers</div>
+                    </div>
+                </div>
+                <div class="rokaucareerwala">
+                    <p>Management</p>
+                    <p>Business Analytics</p>
+                    <p>Improve your business decision making with dashboards,real-time analytics,scenario analysis,and
+                        reporting skills</p>
+                    <div class="twoboxwaladiv">
+                        <div>500 courses</div>
+                        <div>42 providers</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footka">
+            <div id="footkakaiandr">
+                <div class="websitewla">
+                    <img src="static/images/mbsalogo.png" alt="" height="50" width="150">
+                    <p>Connect with us</p>
+                    <div class="chotiimags">
+                        <div>
+                            <img src="https://static.naukimg.com/s/0/0/i/new-homepage/facebook.svg" alt="">
+                        </div>
+                        <div>
+                            <img src="https://static.naukimg.com/s/0/0/i/new-homepage/instagram.svg" alt="">
+                        </div>
+                        <div>
+                            <img src="https://static.naukimg.com/s/0/0/i/new-homepage/twitter.svg" alt="">
+                        </div>
+                        <div>
+                            <img src="https://static.naukimg.com/s/0/0/i/new-homepage/linkedin.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="aboutwala">
+                    <p>About us</p>
+                    <p>Careers</p>
+                    <p>Employer home</p>
+                    <p>Sitemap</p>
+                </div>
+                <div class="aboutwala">
+                    <p>Help center</p>
+                    <p>Summons/Notices</p>
+                    <p>Grievances</p>
+                    <p>Report issue</p>
+                </div>
+                <div class="aboutwala">
+                    <p>Privacy policy</p>
+                    <p>Terms & conditions</p>
+                    <p>Fraud alert</p>
+                    <p>Trust & safety</p>
+                </div>
+                <div class="get_on_google">
+                    <p>Apply on the go</p>
+                    <p>Get real time job updates on our App</p>
+                    <div class="imagesog_getit">
+                        <div>
+                            <img src="https://static.naukimg.com/s/0/0/i/new-homepage/android-app.png" alt="">
+                        </div>
+                        <div>
+                            <img src="https://static.naukimg.com/s/0/0/i/new-homepage/ios-app.png" alt="">
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+        integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- <script src="static/new/Naya tropical/Landing Page by Nandlal/index.js" type="module"></script> -->
+    <script type="text/javascript">
+
+        $('.slider').slick({
+
+
+            infinite: true,
+            speed: 400,
+            slidesToShow: 5,
+            slidesToScroll: 5,
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                        infinite: true,
+                        dots: true
+                    }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+
+            ]
+        });
+
+
+
+
+
+
+
+        $('.items_hai').slick({
+            infinite: true,
+            lazyLoad: 'ondemand',
+            slidesToShow: 4,
+            slidesToScroll: 4
+        });
+
+
+
+        $('.gridwlaslider').slick({
+
+
+            dots: true,
+            infinite: false,
+            lazyLoad: 'ondemand',
+            slidesToShow: 2,
+            slidesToScroll: 2,
+        });
+
+
+
+        $('.autowla').slick({
+
+
+            loop: true,
+
+            autoplay: true,
+            autoplayTimeout: 1000,
+            infinite: true,
+            nav: false,
+
+            //    lazyLoad: 'ondemand',
+            slidesToShow: 4,
+            slidesToScroll: 4,
+        });
+
+
+
+        $('.carrerslider').slick({
+            infinite: false,
+            lazyLoad: 'ondemand',
+            slidesToShow: 3,
+            slidesToScroll: 3
+        });
+
+        $('.slidergridwala').slick({
+            infinite: false,
+            lazyLoad: 'ondemand',
+            slidesToShow: 5,
+            slidesToScroll: 5,
+        });
+
+        function checkSubmit() {
+            skills = document.getElementById("skills").value
+            if (skills == "") {
+                alert("Enter a skill/designation/company!")
+                return false;
+            }
+            else {
+                // a = confirm("To access all the jobs on jobsaathi, you need to login to the portal. Do you want to proceed?")
+                // window.location.href = "/searchJobs"
+                // if (a){
+                // }
+                // else{
+                //     return false;
+                // }
+                return true
+            }
+        }
+        //  slide2box
+
+
+    </script>
+    <script>
+        const carousel1 = document.querySelector('.carousel1');
+        const slides1 = document.querySelectorAll('.slide1');
+        const prevBtn1 = document.querySelector('.prev1');
+        const nextBtn1 = document.querySelector('.next1');
+
+        let currentIndex1 = 0;
+
+        function setPositionByIndex1() {
+            const slideWidth = slides1[0].clientWidth;
+            carousel1.style.transform = `translateX(-${currentIndex1 * slideWidth}px)`;
+        }
+
+        nextBtn1.addEventListener('click', () => {
+            currentIndex1 = (currentIndex1 + 1) % (slides1.length - Math.floor(carousel1.clientWidth / slides1[0].clientWidth) + 1);
+            setPositionByIndex1();
+        });
+
+        prevBtn1.addEventListener('click', () => {
+            currentIndex1 = currentIndex1 > 0 ? currentIndex1 - 1 : (slides1.length - Math.floor(carousel1.clientWidth / slides1[0].clientWidth));
+            setPositionByIndex1();
+        });
+
+
+    </script>
+    <script>
+        const carousel2 = document.querySelector('.carousel2');
+        const slides2 = document.querySelectorAll('.slide2');
+        const prevBtn2 = document.querySelector('.prev2');
+        const nextBtn2 = document.querySelector('.next2');
+
+        let currentIndex2 = 0;
+
+        function setPositionByIndex2() {
+            const slideWidth = slides2[0].clientWidth;
+            carousel2.style.transform = `translateX(-${currentIndex2 * slideWidth}px)`;
+        }
+
+        nextBtn2.addEventListener('click', () => {
+            currentIndex2 = (currentIndex2 + 1) % (slides2.length - Math.floor(carousel2.clientWidth / slides2[0].clientWidth) + 1);
+            setPositionByIndex2();
+        });
+
+        prevBtn2.addEventListener('click', () => {
+            currentIndex2 = currentIndex2 > 0 ? currentIndex2 - 1 : (slides2.length - Math.floor(carousel2.clientWidth / slides2[0].clientWidth));
+            setPositionByIndex2();
+        });
+
+
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const hamburgerMenu = document.querySelector('.hamburger-menu');
+            const navElements = document.querySelector('.t_elements');
+
+            hamburgerMenu.addEventListener('click', function () {
+                navElements.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

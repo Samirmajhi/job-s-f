@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Resume and Profile Pic</title>
+</head>
+<body>
+    <h1>Upload Resume and Profile Picture</h1>
+    <form method="POST" action="/upload" enctype="multipart/form-data">
+        <label for="resume">Upload Resume:</label>
+        <input type="file" name="resume" accept=".pdf, .doc, .docx"><br>
+
+        <label for="profile_pic">Upload Profile Picture:</label>
+        <input type="file" name="profile_pic" accept=".jpg, .jpeg, .png"><br>
+
+        <input type="submit" value="Upload">
+    </form>
+</body>
+</html>
